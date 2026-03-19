@@ -938,6 +938,350 @@
             background: linear-gradient(90deg, transparent, var(--amber), transparent);
             margin: 0;
         }
+
+        /* ============================================================================ */
+        /* LEAD CAPTURE FORM */
+        /* ============================================================================ */
+
+        .lead-form-wrapper {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .lead-form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .lead-form-header h3 {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .lead-form-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .form-section {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: rgba(212, 165, 116, 0.03);
+        }
+
+        .form-section legend {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--amber);
+            padding: 0 8px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-section legend .optional {
+            font-weight: 400;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 480px) {
+            .field-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .field-group {
+            margin-bottom: 16px;
+        }
+
+        .field-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .field-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-light);
+            margin-bottom: 6px;
+        }
+
+        .req {
+            color: #e63946;
+        }
+
+        .lead-form-wrapper input[type="text"],
+        .lead-form-wrapper input[type="email"],
+        .lead-form-wrapper input[type="tel"],
+        .lead-form-wrapper select,
+        .lead-form-wrapper textarea {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-light);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .lead-form-wrapper input::placeholder,
+        .lead-form-wrapper textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .lead-form-wrapper input:focus,
+        .lead-form-wrapper select:focus,
+        .lead-form-wrapper textarea:focus {
+            outline: none;
+            border-color: var(--amber);
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.15);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .lead-form-wrapper input.invalid,
+        .lead-form-wrapper select.invalid {
+            border-color: #e63946;
+            box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
+        }
+
+        .lead-form-wrapper select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 32px;
+        }
+
+        .lead-form-wrapper select option {
+            background: #1a1a1a;
+            color: var(--text-light);
+        }
+
+        .lead-form-wrapper textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .error-msg {
+            display: block;
+            font-size: 0.8rem;
+            color: #e63946;
+            min-height: 1.2em;
+            margin-top: 4px;
+        }
+
+        /* Intent Cards — 3x2 grid */
+        .intent-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .intent-options {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .intent-options {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .intent-card {
+            cursor: pointer;
+        }
+
+        .intent-card input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .intent-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 16px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            background: rgba(212, 165, 116, 0.03);
+            transition: all 0.2s;
+            font-weight: 500;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .intent-label:hover {
+            border-color: var(--amber);
+            background: rgba(212, 165, 116, 0.08);
+        }
+
+        .intent-card input:checked + .intent-label {
+            border-color: var(--gold);
+            background: rgba(255, 215, 0, 0.1);
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+            color: var(--gold);
+        }
+
+        .intent-icon {
+            font-size: 1.25rem;
+        }
+
+        /* Conditional Sections */
+        .conditional-section {
+            animation: formSlideDown 0.3s ease-out;
+        }
+
+        @keyframes formSlideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Submit Button */
+        .form-actions {
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        .btn-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 360px;
+            padding: 14px 32px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            color: var(--bg-dark);
+            background: linear-gradient(135deg, var(--gold), var(--amber));
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+        }
+
+        .btn-submit:active {
+            transform: scale(0.98);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-loading {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2.5px solid rgba(10, 10, 10, 0.3);
+            border-top-color: var(--bg-dark);
+            border-radius: 50%;
+            animation: formSpin 0.6s linear infinite;
+        }
+
+        @keyframes formSpin {
+            to { transform: rotate(360deg); }
+        }
+
+        .form-disclaimer {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 12px;
+            line-height: 1.4;
+        }
+
+        /* Success Message */
+        .success-message {
+            text-align: center;
+            padding: 48px 24px;
+            background: rgba(212, 165, 116, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .success-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 16px;
+            background: linear-gradient(135deg, var(--gold), var(--amber));
+            color: var(--bg-dark);
+            font-size: 2rem;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .success-message h2 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--gold);
+        }
+
+        .success-message p {
+            color: var(--text-light);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Error Banner */
+        .error-banner {
+            background: rgba(230, 57, 70, 0.1);
+            border: 1px solid rgba(230, 57, 70, 0.3);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        .error-banner p {
+            color: #fca5a5;
+            font-size: 0.9rem;
+        }
+
+        .error-banner a {
+            color: var(--gold);
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -1263,9 +1607,249 @@
                 </p>
             </div>
 
-            <div class="cta-buttons">
-                <a href="mailto:ryansylvestri@gmail.com?subject=Monkey Maghees - Request for Financials" class="btn btn-primary">Request Financials Package</a>
-                <a href="mailto:ryansylvestri@gmail.com?subject=Monkey Maghees - Schedule a Showing" class="btn btn-secondary">Schedule a Private Showing</a>
+            <!-- Lead Capture Form -->
+            <div class="lead-form-wrapper">
+                <div class="lead-form-header">
+                    <h3>Get Started</h3>
+                    <p>Tell us a little about what you're looking for and we'll be in touch shortly.</p>
+                </div>
+
+                <form id="leadCaptureForm" novalidate>
+                    <!-- Step 1: Contact Info -->
+                    <fieldset class="form-section" id="section-contact">
+                        <legend>Your Information</legend>
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label for="firstName">First Name <span class="req">*</span></label>
+                                <input type="text" id="firstName" name="firstName" required autocomplete="given-name" placeholder="First name">
+                                <span class="error-msg" data-for="firstName"></span>
+                            </div>
+                            <div class="field-group">
+                                <label for="lastName">Last Name <span class="req">*</span></label>
+                                <input type="text" id="lastName" name="lastName" required autocomplete="family-name" placeholder="Last name">
+                                <span class="error-msg" data-for="lastName"></span>
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label for="email">Email <span class="req">*</span></label>
+                                <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
+                                <span class="error-msg" data-for="email"></span>
+                            </div>
+                            <div class="field-group">
+                                <label for="phone">Phone <span class="req">*</span></label>
+                                <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="(845) 555-0100">
+                                <span class="error-msg" data-for="phone"></span>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Step 2: Intent -->
+                    <fieldset class="form-section" id="section-intent">
+                        <legend>What Are You Looking To Do?</legend>
+                        <div class="intent-options">
+                            <label class="intent-card">
+                                <input type="radio" name="intent" value="Buying" required>
+                                <span class="intent-label">
+                                    <span class="intent-icon">🏠</span>
+                                    <span>Buy a Home</span>
+                                </span>
+                            </label>
+                            <label class="intent-card">
+                                <input type="radio" name="intent" value="Selling">
+                                <span class="intent-label">
+                                    <span class="intent-icon">📋</span>
+                                    <span>Sell a Home</span>
+                                </span>
+                            </label>
+                            <label class="intent-card">
+                                <input type="radio" name="intent" value="Both">
+                                <span class="intent-label">
+                                    <span class="intent-icon">🔄</span>
+                                    <span>Buy &amp; Sell</span>
+                                </span>
+                            </label>
+                            <label class="intent-card">
+                                <input type="radio" name="intent" value="Investor">
+                                <span class="intent-label">
+                                    <span class="intent-icon">💼</span>
+                                    <span>Investor</span>
+                                </span>
+                            </label>
+                            <label class="intent-card">
+                                <input type="radio" name="intent" value="Renter">
+                                <span class="intent-label">
+                                    <span class="intent-icon">🏘️</span>
+                                    <span>Renter</span>
+                                </span>
+                            </label>
+                            <label class="intent-card">
+                                <input type="radio" name="intent" value="Not Sure">
+                                <span class="intent-label">
+                                    <span class="intent-icon">💬</span>
+                                    <span>Not Sure Yet</span>
+                                </span>
+                            </label>
+                        </div>
+                        <span class="error-msg" data-for="intent"></span>
+                    </fieldset>
+
+                    <!-- Conditional: Buyer Fields -->
+                    <fieldset class="form-section conditional-section" id="section-buyer" hidden>
+                        <legend>Buying Details</legend>
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label for="buyerPropertyType">Property Type</label>
+                                <select id="buyerPropertyType" name="buyerPropertyType">
+                                    <option value="">Select type...</option>
+                                    <option value="Single Family">Single Family</option>
+                                    <option value="Condo/Townhouse">Condo / Townhouse</option>
+                                    <option value="Multi-Family">Multi-Family</option>
+                                    <option value="Land">Land</option>
+                                    <option value="Commercial">Commercial</option>
+                                </select>
+                            </div>
+                            <div class="field-group">
+                                <label for="priceRange">Price Range</label>
+                                <select id="priceRange" name="priceRange">
+                                    <option value="">Select range...</option>
+                                    <option value="Under $200K">Under $200K</option>
+                                    <option value="$200K - $350K">$200K – $350K</option>
+                                    <option value="$350K - $500K">$350K – $500K</option>
+                                    <option value="$500K - $750K">$500K – $750K</option>
+                                    <option value="$750K - $1M">$750K – $1M</option>
+                                    <option value="$1M+">$1M+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label for="buyerTimeline">Timeline</label>
+                                <select id="buyerTimeline" name="buyerTimeline">
+                                    <option value="">Select timeline...</option>
+                                    <option value="ASAP">ASAP</option>
+                                    <option value="1-3 Months">1–3 Months</option>
+                                    <option value="3-6 Months">3–6 Months</option>
+                                    <option value="6-12 Months">6–12 Months</option>
+                                    <option value="Just Browsing">Just Browsing</option>
+                                </select>
+                            </div>
+                            <div class="field-group">
+                                <label for="areasOfInterest">Areas of Interest</label>
+                                <input type="text" id="areasOfInterest" name="areasOfInterest" placeholder="e.g., Fishkill, Beacon, Wappingers Falls">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Conditional: Seller Fields -->
+                    <fieldset class="form-section conditional-section" id="section-seller" hidden>
+                        <legend>Selling Details</legend>
+                        <div class="field-group">
+                            <label for="propertyAddress">Property Address</label>
+                            <input type="text" id="propertyAddress" name="propertyAddress" placeholder="123 Main St, Fishkill, NY 12524" autocomplete="street-address">
+                        </div>
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label for="sellerPropertyType">Property Type</label>
+                                <select id="sellerPropertyType" name="sellerPropertyType">
+                                    <option value="">Select type...</option>
+                                    <option value="Single Family">Single Family</option>
+                                    <option value="Condo/Townhouse">Condo / Townhouse</option>
+                                    <option value="Multi-Family">Multi-Family</option>
+                                    <option value="Land">Land</option>
+                                    <option value="Commercial">Commercial</option>
+                                </select>
+                            </div>
+                            <div class="field-group">
+                                <label for="sellerTimeline">Timeline</label>
+                                <select id="sellerTimeline" name="sellerTimeline">
+                                    <option value="">Select timeline...</option>
+                                    <option value="ASAP">ASAP</option>
+                                    <option value="1-3 Months">1–3 Months</option>
+                                    <option value="3-6 Months">3–6 Months</option>
+                                    <option value="6-12 Months">6–12 Months</option>
+                                    <option value="Just Curious">Just Curious</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <label for="reasonForSelling">Reason for Selling <span class="optional">(optional)</span></label>
+                            <select id="reasonForSelling" name="reasonForSelling">
+                                <option value="">Select reason...</option>
+                                <option value="Upsizing">Upsizing</option>
+                                <option value="Downsizing">Downsizing</option>
+                                <option value="Relocating">Relocating</option>
+                                <option value="Investment">Investment</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <!-- Preferences -->
+                    <fieldset class="form-section" id="section-preferences">
+                        <legend>Preferences <span class="optional">(optional)</span></legend>
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label for="contactMethod">Preferred Contact Method</label>
+                                <select id="contactMethod" name="contactMethod">
+                                    <option value="">No preference</option>
+                                    <option value="Call">Call</option>
+                                    <option value="Text">Text</option>
+                                    <option value="Email">Email</option>
+                                </select>
+                            </div>
+                            <div class="field-group">
+                                <label for="bestTime">Best Time to Reach</label>
+                                <select id="bestTime" name="bestTime">
+                                    <option value="">No preference</option>
+                                    <option value="Morning">Morning</option>
+                                    <option value="Afternoon">Afternoon</option>
+                                    <option value="Evening">Evening</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <label for="comments">Anything else you'd like us to know?</label>
+                            <textarea id="comments" name="comments" rows="3" placeholder="Tell us more about what you're looking for..."></textarea>
+                        </div>
+                    </fieldset>
+
+                    <!-- Hidden UTM / Tracking Fields -->
+                    <input type="hidden" id="utmSource" name="utmSource">
+                    <input type="hidden" id="utmMedium" name="utmMedium">
+                    <input type="hidden" id="utmCampaign" name="utmCampaign">
+                    <input type="hidden" id="utmTerm" name="utmTerm">
+                    <input type="hidden" id="utmContent" name="utmContent">
+                    <input type="hidden" id="referringUrl" name="referringUrl">
+                    <input type="hidden" id="formId" name="formId">
+                    <input type="hidden" id="submittedAt" name="submittedAt">
+
+                    <!-- Submit -->
+                    <div class="form-actions">
+                        <button type="submit" id="submitBtn" class="btn-submit">
+                            <span class="btn-text">Get Started</span>
+                            <span class="btn-loading" hidden>
+                                <span class="spinner"></span> Sending...
+                            </span>
+                        </button>
+                        <p class="form-disclaimer">
+                            By submitting this form you agree to be contacted by our team regarding real estate services.
+                            We respect your privacy and will never share your information with third parties.
+                        </p>
+                    </div>
+                </form>
+
+                <!-- Success State -->
+                <div id="successMessage" class="success-message" hidden>
+                    <div class="success-icon">✓</div>
+                    <h2>Thank You!</h2>
+                    <p>We've received your information and will be in touch shortly. We look forward to helping you with your real estate needs in the Hudson Valley.</p>
+                </div>
+
+                <!-- Error State -->
+                <div id="errorMessage" class="error-banner" hidden>
+                    <p>Something went wrong submitting your information. Please try again or email us directly at <a href="mailto:ryansylvestri@gmail.com">ryansylvestri@gmail.com</a>.</p>
+                </div>
             </div>
 
             <div class="disclaimer">
@@ -1536,6 +2120,272 @@
             // Ensure all animations are ready
             document.body.style.opacity = '1';
         });
+    </script>
+
+    <!-- ========================================================================== -->
+    <!-- LEAD CAPTURE FORM LOGIC -->
+    <!-- ========================================================================== -->
+    <script>
+    (function () {
+        'use strict';
+
+        // ── Configuration ─────────────────────────────────────────────────
+        var WEBHOOK_URL = 'https://n8n.srv1106931.hstgr.cloud/webhook/lead-capture';
+
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('webhookUrl')) {
+            WEBHOOK_URL = params.get('webhookUrl');
+        }
+
+        // ── DOM References ────────────────────────────────────────────────
+        var form = document.getElementById('leadCaptureForm');
+        if (!form) return;
+
+        var submitBtn = document.getElementById('submitBtn');
+        var btnText = submitBtn.querySelector('.btn-text');
+        var btnLoading = submitBtn.querySelector('.btn-loading');
+        var successMsg = document.getElementById('successMessage');
+        var errorMsg = document.getElementById('errorMessage');
+
+        var sectionBuyer = document.getElementById('section-buyer');
+        var sectionSeller = document.getElementById('section-seller');
+
+        // ── UTM & Tracking Capture ────────────────────────────────────────
+        function captureTrackingData() {
+            var utmFields = ['utmSource', 'utmMedium', 'utmCampaign', 'utmTerm', 'utmContent'];
+            var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+
+            for (var i = 0; i < utmFields.length; i++) {
+                var val = params.get(utmKeys[i]) || '';
+                document.getElementById(utmFields[i]).value = val;
+            }
+
+            document.getElementById('referringUrl').value = document.referrer || '';
+            document.getElementById('submittedAt').value = '';
+            document.getElementById('formId').value = params.get('formId')
+                || document.body.getAttribute('data-form-id')
+                || 'monkey-maghees-site';
+        }
+
+        captureTrackingData();
+
+        // ── Progressive Disclosure (Intent → conditional sections) ────────
+        var intentRadios = document.querySelectorAll('input[name="intent"]');
+
+        function updateConditionalSections() {
+            var selected = document.querySelector('input[name="intent"]:checked');
+            if (!selected) {
+                sectionBuyer.hidden = true;
+                sectionSeller.hidden = true;
+                return;
+            }
+
+            var val = selected.value;
+            sectionBuyer.hidden = !(val === 'Buying' || val === 'Both');
+            sectionSeller.hidden = !(val === 'Selling' || val === 'Both');
+        }
+
+        for (var i = 0; i < intentRadios.length; i++) {
+            intentRadios[i].addEventListener('change', updateConditionalSections);
+        }
+
+        // ── Phone Formatting ──────────────────────────────────────────────
+        var phoneInput = document.getElementById('phone');
+
+        phoneInput.addEventListener('input', function () {
+            var digits = this.value.replace(/\D/g, '');
+            if (digits.length === 0) {
+                this.value = '';
+                return;
+            }
+            var formatted = '';
+            if (digits.length > 0) formatted += '(' + digits.substring(0, 3);
+            if (digits.length >= 3) formatted += ') ';
+            if (digits.length > 3) formatted += digits.substring(3, 6);
+            if (digits.length >= 6) formatted += '-' + digits.substring(6, 10);
+            this.value = formatted;
+        });
+
+        // ── Validation ────────────────────────────────────────────────────
+        function showError(fieldName, message) {
+            var errSpan = document.querySelector('.error-msg[data-for="' + fieldName + '"]');
+            if (errSpan) errSpan.textContent = message;
+
+            var input = document.querySelector('[name="' + fieldName + '"]');
+            if (input) input.classList.add('invalid');
+        }
+
+        function clearErrors() {
+            var errSpans = document.querySelectorAll('.error-msg');
+            for (var i = 0; i < errSpans.length; i++) {
+                errSpans[i].textContent = '';
+            }
+            var invalids = document.querySelectorAll('.invalid');
+            for (var j = 0; j < invalids.length; j++) {
+                invalids[j].classList.remove('invalid');
+            }
+        }
+
+        function validateForm() {
+            clearErrors();
+            var valid = true;
+
+            var firstName = form.firstName.value.trim();
+            if (!firstName) {
+                showError('firstName', 'First name is required');
+                valid = false;
+            }
+
+            var lastName = form.lastName.value.trim();
+            if (!lastName) {
+                showError('lastName', 'Last name is required');
+                valid = false;
+            }
+
+            var email = form.email.value.trim();
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email) {
+                showError('email', 'Email is required');
+                valid = false;
+            } else if (!emailRegex.test(email)) {
+                showError('email', 'Please enter a valid email');
+                valid = false;
+            }
+
+            var phoneDigits = form.phone.value.replace(/\D/g, '');
+            if (!phoneDigits) {
+                showError('phone', 'Phone number is required');
+                valid = false;
+            } else if (phoneDigits.length < 10) {
+                showError('phone', 'Please enter a 10-digit phone number');
+                valid = false;
+            }
+
+            var intentSelected = document.querySelector('input[name="intent"]:checked');
+            if (!intentSelected) {
+                showError('intent', 'Please select what you\'re looking to do');
+                valid = false;
+            }
+
+            return valid;
+        }
+
+        // ── Collect Form Data ─────────────────────────────────────────────
+        function collectFormData() {
+            var intent = document.querySelector('input[name="intent"]:checked');
+
+            var data = {
+                firstName: form.firstName.value.trim(),
+                lastName: form.lastName.value.trim(),
+                email: form.email.value.trim(),
+                phone: form.phone.value.replace(/\D/g, ''),
+                intent: intent ? intent.value : '',
+                contactMethod: form.contactMethod.value,
+                bestTime: form.bestTime.value,
+                comments: form.comments.value.trim(),
+                utmSource: form.utmSource.value,
+                utmMedium: form.utmMedium.value,
+                utmCampaign: form.utmCampaign.value,
+                utmTerm: form.utmTerm.value,
+                utmContent: form.utmContent.value,
+                referringUrl: form.referringUrl.value,
+                formId: form.formId.value,
+                submittedAt: new Date().toISOString()
+            };
+
+            // Buyer fields
+            if (intent && (intent.value === 'Buying' || intent.value === 'Both')) {
+                data.buyerPropertyType = form.buyerPropertyType.value;
+                data.priceRange = form.priceRange.value;
+                data.buyerTimeline = form.buyerTimeline.value;
+                data.areasOfInterest = form.areasOfInterest.value.trim();
+            }
+
+            // Seller fields
+            if (intent && (intent.value === 'Selling' || intent.value === 'Both')) {
+                data.propertyAddress = form.propertyAddress.value.trim();
+                data.sellerPropertyType = form.sellerPropertyType.value;
+                data.sellerTimeline = form.sellerTimeline.value;
+                data.reasonForSelling = form.reasonForSelling.value;
+            }
+
+            return data;
+        }
+
+        // ── Submit ────────────────────────────────────────────────────────
+        function setLoading(loading) {
+            submitBtn.disabled = loading;
+            btnText.hidden = loading;
+            btnLoading.hidden = !loading;
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            errorMsg.hidden = true;
+
+            if (!validateForm()) {
+                var firstInvalid = form.querySelector('.invalid');
+                if (firstInvalid) {
+                    firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstInvalid.focus();
+                }
+                return;
+            }
+
+            var data = collectFormData();
+
+            if (!WEBHOOK_URL) {
+                console.error('Webhook URL not configured.');
+                alert('Form is not configured yet. Please contact support.');
+                return;
+            }
+
+            setLoading(true);
+
+            fetch(WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+                .then(function (response) {
+                    if (!response.ok) throw new Error('HTTP ' + response.status);
+                    return response.json().catch(function () { return {}; });
+                })
+                .then(function () {
+                    form.hidden = true;
+                    successMsg.hidden = false;
+                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'lead_form_submit', {
+                            event_category: 'Lead',
+                            event_label: data.intent
+                        });
+                    }
+                    if (typeof fbq === 'function') {
+                        fbq('track', 'Lead', { content_name: data.intent });
+                    }
+                })
+                .catch(function (err) {
+                    console.error('Form submission error:', err);
+                    errorMsg.hidden = false;
+                    errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                })
+                .finally(function () {
+                    setLoading(false);
+                });
+        });
+
+        // Clear field-level errors on input
+        form.addEventListener('input', function (e) {
+            var name = e.target.name;
+            if (name) {
+                var errSpan = document.querySelector('.error-msg[data-for="' + name + '"]');
+                if (errSpan) errSpan.textContent = '';
+                e.target.classList.remove('invalid');
+            }
+        });
+    })();
     </script>
 </body>
 </html>
