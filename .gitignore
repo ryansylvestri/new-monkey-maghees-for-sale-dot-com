@@ -27,3 +27,7 @@ Thumbs.db
 
 # Hostinger
 .hostinger/
+
+# Credentials (never commit)
+.credentials/
+secrets.md
