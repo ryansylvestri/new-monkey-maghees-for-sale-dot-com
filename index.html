@@ -3,37 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monkey Maghees - Bar for Sale Poughkeepsie | Asset Sale $150,000</title>
-    <meta name="description" content="Monkey Maghees - Premium bar asset sale in Poughkeepsie, NY. $300K-$500K annual revenue, 16+ year community fixture. Turnkey operation with all licenses included.">
-    <meta name="keywords" content="bar for sale Poughkeepsie, pub for sale Hudson Valley, business for sale Dutchess County, cash bar investment">
-    <meta name="theme-color" content="#0a0a0a">
-    
+    <title>Monkey Maghees - Bar for Sale Poughkeepsie | Asset Sale $150,000 | RE/MAX Town & Country</title>
+    <meta name="description" content="Monkey Maghees - Premium bar asset sale in Poughkeepsie, NY. $300K-$500K annual revenue, 16+ year community fixture. Listed by RE/MAX Town & Country.">
+    <meta name="keywords" content="bar for sale Poughkeepsie, pub for sale Hudson Valley, business for sale Dutchess County, cash bar investment, RE/MAX">
+    <meta name="theme-color" content="#003DA5">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg-dark: #0a0a0a;
-            --bg-darker: #050505;
-            --amber: #d4a574;
-            --gold: #ffd700;
-            --purple: #8b5cf6;
-            --white: #ffffff;
-            --text-light: #e8e8e8;
-            --text-muted: #999999;
-            --border: rgba(212, 165, 116, 0.2);
+            --remax-red: #DC1C2E;
+            --remax-blue: #003DA5;
+            --remax-blue-dark: #002B75;
+            --remax-white: #FFFFFF;
+            --bg-dark: #0B1A2E;
+            --bg-darker: #061224;
+            --bg-navy: #0F2440;
+            --accent: var(--remax-red);
+            --text-light: #E8EDF3;
+            --text-muted: #8899AA;
+            --border: rgba(0, 61, 165, 0.3);
+            --gold-accent: #FFD700;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -49,350 +46,283 @@
             line-height: 1.2;
         }
 
-        /* ============================================================================ */
-        /* HERO SECTION - 3D PARALLAX WITH THREE.JS */
-        /* ============================================================================ */
+        .section-title {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--remax-white);
+        }
+        .section-title span { color: var(--remax-red); }
 
-        /* Hero video background */
-        .hero-video-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-            opacity: 0.35;
-            filter: brightness(0.6) saturate(1.3);
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
+        /* ===== REMAX BRANDED NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(11, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--remax-red);
+            padding: 0.6rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .navbar-brand img {
+            height: 36px;
+        }
+        .navbar-brand span {
+            font-family: 'Playfair Display', serif;
+            color: var(--remax-white);
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        .navbar-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+        .navbar-links a:hover { color: var(--remax-red); }
+        .nav-cta {
+            background: var(--remax-red);
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+        }
+        .nav-cta:hover { background: #B5162A !important; color: white !important; }
+
+        @media (max-width: 768px) {
+            .navbar-links { display: none; }
+        }
+
+        /* ===== HERO ===== */
+        .hero-bg-img {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: 0; opacity: 0.3;
+            filter: brightness(0.5) saturate(1.2);
+        }
         #hero {
             position: relative;
             width: 100%;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             background-color: var(--bg-dark);
+            padding-top: 60px;
         }
-
         #three-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1; opacity: 0.6;
         }
-
         .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            max-width: 90%;
-            padding: 2rem;
+            position: relative; z-index: 10;
+            text-align: center; padding: 2rem;
+            max-width: 900px;
         }
-
-        .hero-content h1 {
-            font-size: clamp(2.5rem, 8vw, 5.5rem);
-            color: var(--gold);
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5), 0 0 60px rgba(139, 92, 246, 0.3);
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-            animation: heroFadeIn 1.2s ease-out 0.3s both;
-        }
-
-        .hero-content .subtitle {
-            font-size: clamp(0.95rem, 2.5vw, 1.3rem);
-            color: var(--text-light);
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-            animation: heroFadeIn 1.2s ease-out 0.6s both;
-        }
-
-        .hero-counter {
+        .hero-badge {
             display: inline-block;
-            font-size: clamp(1.5rem, 4vw, 2.8rem);
-            color: var(--amber);
+            background: var(--remax-red);
+            color: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
             font-weight: 700;
-            background: rgba(212, 165, 116, 0.1);
-            border: 2px solid var(--amber);
-            padding: 1.2rem 2.5rem;
-            border-radius: 8px;
-            margin-bottom: 3rem;
-            animation: heroFadeIn 1.2s ease-out 0.9s both;
-            text-shadow: 0 0 20px rgba(212, 165, 116, 0.4);
-        }
-
-        .hero-cta {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, var(--gold), var(--amber));
-            color: var(--bg-dark);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border-radius: 6px;
-            cursor: pointer;
-            border: none;
-            transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            animation: heroFadeIn 1.2s ease-out 1.2s both;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            margin-bottom: 1.5rem;
+            animation: fadeIn 1s ease-out 0.2s both;
         }
-
-        .hero-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 900;
+            color: var(--remax-white);
+            text-shadow: 0 4px 40px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-out 0.4s both;
         }
-
+        .hero-content h1 em {
+            font-style: normal;
+            color: var(--remax-red);
+        }
+        .hero-content .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+        .hero-counter {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 900;
+            color: var(--gold-accent);
+            text-shadow: 0 2px 20px rgba(255,215,0,0.3);
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease-out 0.8s both;
+        }
+        .hero-price {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: var(--remax-white);
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease-out 1s both;
+        }
+        .hero-price span { color: var(--remax-red); }
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeIn 1s ease-out 1.2s both;
+        }
         .scroll-indicator {
             position: absolute;
-            bottom: 3rem;
+            bottom: 2rem;
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
             animation: bounce 2s infinite;
         }
-
         .scroll-indicator svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--gold);
-            fill: none;
-            stroke-width: 2;
+            width: 28px; height: 28px;
+            stroke: var(--remax-white);
+            stroke-width: 2; fill: none;
+            opacity: 0.6;
         }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes bounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -10px); } }
 
-        @keyframes heroFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(10px); }
-        }
-
-        /* ============================================================================ */
-        /* BY THE NUMBERS SECTION - 3D TILT CARDS */
-        /* ============================================================================ */
-
+        /* ===== STATS ===== */
         #stats {
-            padding: 6rem 2rem;
-            background: var(--bg-dark);
-            position: relative;
+            padding: 5rem 2rem;
+            background: linear-gradient(180deg, var(--bg-navy), var(--bg-dark));
         }
-
-        #stats::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--amber), transparent);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 4rem;
-            color: var(--white);
-        }
-
-        .section-title span {
-            color: var(--gold);
-        }
-
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
         }
-
         .stat-card {
-            background: linear-gradient(135deg, rgba(212, 165, 116, 0.1), rgba(139, 92, 246, 0.05));
+            background: rgba(0, 61, 165, 0.1);
             border: 1px solid var(--border);
-            padding: 2.5rem 2rem;
             border-radius: 12px;
+            padding: 2.5rem 1.5rem;
             text-align: center;
-            perspective: 1200px;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
         .stat-card:hover {
-            border-color: var(--amber);
-            box-shadow: 0 20px 60px rgba(212, 165, 116, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            transform: translateY(-10px);
+            transform: translateY(-5px) perspective(500px) rotateX(2deg);
+            box-shadow: 0 20px 60px rgba(220, 28, 46, 0.15);
+            border-color: var(--remax-red);
         }
-
-        .stat-card:hover::before {
-            opacity: 1;
-        }
-
         .stat-number {
-            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
             font-weight: 900;
-            color: var(--gold);
+            color: var(--remax-white);
             margin-bottom: 0.5rem;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
         }
-
         .stat-label {
-            font-size: 0.95rem;
             color: var(--text-muted);
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.15em;
             font-weight: 600;
         }
 
-        /* ============================================================================ */
-        /* THE OPPORTUNITY SECTION */
-        /* ============================================================================ */
-
+        /* ===== OPPORTUNITY ===== */
         #opportunity {
             padding: 6rem 2rem;
-            background: linear-gradient(180deg, rgba(10,10,10,0.88), rgba(5,5,5,0.92)), url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_1920,e_blur:200/D7A18D28-FE2D-4ED6-87D7-29B3272AB7DD_4_5005_c_fyw72h') center/cover fixed;
+            background: linear-gradient(180deg, rgba(11,26,46,0.95), rgba(6,18,36,0.97)),
+                        url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_1920,e_blur:300/C487A34C-10F7-4656-A705-F3906DBF641B_4_5005_c_rascyk') center/cover fixed;
             position: relative;
         }
-
-        #opportunity::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--amber), transparent);
-        }
-
-        .opportunity-container {
+        .opportunity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             max-width: 1100px;
             margin: 0 auto;
         }
-
-        .opportunity-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
         .opportunity-card {
-            background: rgba(212, 165, 116, 0.05);
-            border-left: 4px solid var(--gold);
-            padding: 2.5rem;
-            border-radius: 8px;
-            transition: all 0.4s ease;
-            position: relative;
+            background: rgba(0, 61, 165, 0.08);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s, border-color 0.3s;
         }
-
         .opportunity-card:hover {
-            background: rgba(212, 165, 116, 0.1);
-            border-left-color: var(--amber);
-            transform: translateX(10px);
+            transform: translateY(-3px);
+            border-color: var(--remax-red);
         }
-
-        .opportunity-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: var(--amber);
-        }
-
-        .opportunity-card p {
-            color: var(--text-light);
-            line-height: 1.8;
-            font-size: 0.95rem;
-        }
-
         .opportunity-icon {
-            width: 3rem;
-            height: 3rem;
-            background: rgba(255, 215, 0, 0.1);
-            border: 2px solid var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 2rem;
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+        }
+        .opportunity-card h3 {
+            font-size: 1.2rem;
+            color: var(--remax-white);
+            margin-bottom: 0.8rem;
+        }
+        .opportunity-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
-        /* ============================================================================ */
-        /* WHAT'S INCLUDED SECTION - 3D CARD FLIP */
-        /* ============================================================================ */
-
+        /* ===== WHAT'S INCLUDED ===== */
         #whats-included {
             padding: 6rem 2rem;
             background: var(--bg-dark);
-            position: relative;
         }
-
-        #whats-included::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--amber), transparent);
-        }
-
         .included-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
+            gap: 1.5rem;
+            max-width: 1100px;
             margin: 0 auto;
-            margin-top: 3rem;
         }
-
         .flip-card {
-            height: 280px;
-            cursor: pointer;
-            position: relative;
-            transform-style: preserve-3d;
             perspective: 1000px;
+            height: 160px;
+            cursor: pointer;
         }
-
-        .flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-
         .flip-card-inner {
             position: relative;
             width: 100%;
             height: 100%;
-            text-align: center;
             transition: transform 0.6s;
             transform-style: preserve-3d;
         }
-
+        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
         .flip-card-front, .flip-card-back {
             position: absolute;
             width: 100%;
@@ -402,341 +332,234 @@
             align-items: center;
             justify-content: center;
             border-radius: 12px;
-            padding: 2rem;
-            font-weight: bold;
-            border: 2px solid var(--border);
+            padding: 1.5rem;
+            text-align: center;
+            font-weight: 600;
         }
-
         .flip-card-front {
-            background: linear-gradient(135deg, rgba(212, 165, 116, 0.15), rgba(139, 92, 246, 0.08));
-            color: var(--amber);
-            font-size: 1.2rem;
+            background: linear-gradient(135deg, var(--bg-navy), var(--remax-blue-dark));
+            border: 1px solid var(--border);
+            color: var(--remax-white);
+            font-size: 1.1rem;
         }
-
         .flip-card-back {
-            background: linear-gradient(135deg, var(--amber), var(--gold));
-            color: var(--bg-dark);
+            background: linear-gradient(135deg, var(--remax-red), #B5162A);
+            color: white;
             transform: rotateY(180deg);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
-        /* ============================================================================ */
-        /* VENUE GALLERY SECTION */
-        /* ============================================================================ */
-
+        /* ===== GALLERY ===== */
         #gallery {
             padding: 6rem 2rem;
-            background: linear-gradient(180deg, var(--bg-dark), var(--bg-darker));
-            position: relative;
+            background: linear-gradient(180deg, var(--bg-darker), var(--bg-dark));
         }
-
-        #gallery::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--amber), transparent);
-        }
-
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1300px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            max-width: 1400px;
             margin: 0 auto;
-            margin-top: 3rem;
         }
-
         .gallery-item {
             position: relative;
-            height: 320px;
-            border-radius: 12px;
+            height: 260px;
+            border-radius: 8px;
             overflow: hidden;
             cursor: pointer;
-            group: gallery;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s;
         }
-
-        .gallery-item:nth-child(1) {
-            background: url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/518BFA37-E99C-4D6C-A8A7-B29B3D467AEF_4_5005_c_qzahbl') center/cover;
-        }
-        .gallery-item:nth-child(2) {
-            background: url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/28823ABE-BC07-4A42-82D7-21D7B76034FC_4_5005_c_oyz3hd') center/cover;
-        }
-        .gallery-item:nth-child(3) {
-            background: url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/8641E95B-833F-4270-B3AE-75A76596F6D0_4_5005_c_kph7kv') center/cover;
-        }
-        .gallery-item:nth-child(4) {
-            background: url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/F6B48B60-0C49-4F97-930A-525A365F34A1_4_5005_c_or9bev') center/cover;
-        }
-        .gallery-item:nth-child(5) {
-            background: url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/E74839C3-B149-4703-9948-2518367140CA_4_5005_c_azanxn') center/cover;
-        }
-        .gallery-item:nth-child(6) {
-            background: url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/F63EA068-F8B0-4F82-93F0-981389B40C38_4_5005_c_gznna9') center/cover;
-        }
-
-        .gallery-item::before {
+        .gallery-item:hover { transform: scale(1.02); }
+        .gallery-item::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1), transparent);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 2;
+            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.7));
+            transition: opacity 0.3s;
         }
-
-        .gallery-item:hover::before {
-            opacity: 1;
-        }
-
+        .gallery-item:hover::after { background: linear-gradient(180deg, transparent 30%, rgba(220,28,46,0.4)); }
         .gallery-label {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 2rem 1.5rem;
-            background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.9));
-            transform: translateY(20px);
-            transition: transform 0.4s ease;
+            padding: 1.2rem;
             z-index: 3;
         }
-
-        .gallery-item:hover .gallery-label {
-            transform: translateY(0);
-        }
-
         .gallery-label h4 {
-            color: var(--gold);
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
+            color: white;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
         }
-
         .gallery-label p {
-            color: var(--text-muted);
-            font-size: 0.8rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
-
-        /* SCROLLING PHOTO STRIP ANIMATION */
-        @keyframes scrollStrip {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        /* Gallery: featured item spans 2 cols on desktop */
+        .gallery-item.featured {
+            grid-column: span 2;
+            height: 350px;
         }
-        .photo-strip { mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }
-        .photo-strip:hover .photo-strip-track { animation-play-state: paused; }
+        @media (max-width: 768px) {
+            .gallery-item.featured { grid-column: span 1; height: 260px; }
+        }
 
-        /* ============================================================================ */
-        /* THE STORY SECTION - PARALLAX NARRATIVE */
-        /* ============================================================================ */
+        /* ===== FLOOR PLAN ===== */
+        #floorplan {
+            padding: 4rem 2rem;
+            background: var(--bg-dark);
+            text-align: center;
+        }
+        .floorplan-img {
+            max-width: 900px;
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin: 2rem auto 0;
+        }
 
+        /* ===== STORY ===== */
         #story {
             padding: 6rem 2rem;
-            background: linear-gradient(180deg, rgba(10,10,10,0.88), rgba(10,10,10,0.93)), url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_1920,e_blur:150/CFC44269-EA9C-4582-8162-453C796D1D86_4_5005_c_c9oe3b') center/cover fixed;
-            position: relative;
+            background: linear-gradient(180deg, rgba(11,26,46,0.95), rgba(11,26,46,0.97)),
+                        url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_1920,e_blur:200/E74839C3-B149-4703-9948-2518367140CA_4_5005_c_azanxn') center/cover fixed;
         }
-
-        #story::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--amber), transparent);
-        }
-
-        .story-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
+        .story-container { max-width: 900px; margin: 0 auto; }
         .story-text {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1.9;
             color: var(--text-light);
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
         }
-
-        .story-text strong {
-            color: var(--gold);
-        }
-
         .story-highlight {
-            background: linear-gradient(120deg, rgba(255, 215, 0, 0.15), rgba(139, 92, 246, 0.1));
-            border-left: 4px solid var(--gold);
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 3rem 0;
-            font-size: 1.05rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
             font-style: italic;
-            color: var(--text-light);
-            position: relative;
+            color: var(--remax-white);
+            border-left: 4px solid var(--remax-red);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            background: rgba(220, 28, 46, 0.08);
+            border-radius: 0 8px 8px 0;
         }
-
-        .story-highlight::before {
-            content: '"';
-            position: absolute;
-            font-size: 4rem;
-            color: var(--gold);
-            opacity: 0.2;
-            top: -10px;
-            left: 10px;
-        }
-
         .review-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-
-        .review-stat {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(212, 165, 116, 0.05);
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-
+        .review-stat { text-align: center; }
         .review-stat .number {
+            font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
-            color: var(--gold);
             font-weight: 900;
-            margin-bottom: 0.5rem;
+            color: var(--remax-red);
         }
+        .review-stat .label { color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; }
 
-        .review-stat .label {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        /* ============================================================================ */
-        /* LOCATION SECTION */
-        /* ============================================================================ */
-
+        /* ===== LOCATION ===== */
         #location {
             padding: 6rem 2rem;
-            background: linear-gradient(180deg, rgba(10,10,10,0.9), rgba(5,5,5,0.93)), url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_1920,e_blur:200/517742A5-F663-4B55-95E2-38AF5B6713EA_4_5005_c_fki9fq') center/cover fixed;
-            position: relative;
+            background: var(--bg-darker);
         }
-
-        #location::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--amber), transparent);
-        }
-
         .location-container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
             align-items: center;
         }
-
+        @media (max-width: 768px) { .location-container { grid-template-columns: 1fr; } }
         .location-info h3 {
             font-size: 1.5rem;
-            color: var(--gold);
-            margin-bottom: 1.5rem;
+            color: var(--remax-white);
+            margin-bottom: 1rem;
         }
-
-        .location-info p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
         .location-detail {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
             font-size: 0.95rem;
         }
-
         .location-detail::before {
-            content: '✓';
-            color: var(--gold);
-            font-weight: bold;
-            margin-right: 1rem;
-            font-size: 1.3rem;
+            content: '>';
+            color: var(--remax-red);
+            font-weight: 700;
+            margin-right: 0.5rem;
         }
-
-        .location-map {
-            background: linear-gradient(135deg, rgba(212, 165, 116, 0.15), rgba(139, 92, 246, 0.1));
-            border: 2px solid var(--border);
+        .location-map iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
             border-radius: 12px;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            color: var(--text-muted);
-            text-align: center;
-            padding: 2rem;
         }
 
-        @media (max-width: 768px) {
-            .location-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .location-map {
-                height: 300px;
-            }
-        }
-
-        /* ============================================================================ */
-        /* CTA SECTION - CONVERSION FOCUSED */
-        /* ============================================================================ */
-
+        /* ===== CTA / AGENTS ===== */
         #cta {
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, rgba(10,10,10,0.85), rgba(26,26,26,0.9)), url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_1920,e_blur:100/A3D30193-5B21-42EF-8525-4F608E3260AA_4_5005_c_fcwxce') center/cover fixed;
-            position: relative;
+            background: linear-gradient(135deg, var(--remax-blue-dark), var(--bg-dark));
             text-align: center;
         }
-
-        #cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--amber), transparent);
-        }
-
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
+        .cta-content { max-width: 900px; margin: 0 auto; }
         .cta-content h2 {
             font-size: clamp(1.8rem, 5vw, 2.8rem);
             margin-bottom: 1.5rem;
-            color: var(--white);
+            color: var(--remax-white);
         }
-
-        .cta-content h2 span {
-            color: var(--gold);
-        }
-
-        .cta-content p {
+        .cta-content h2 span { color: var(--remax-red); }
+        .cta-content > p {
             font-size: 1.05rem;
             color: var(--text-light);
             margin-bottom: 3rem;
             line-height: 1.8;
         }
+
+        .agents-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        @media (max-width: 768px) { .agents-grid { grid-template-columns: 1fr; } }
+        .agent-card {
+            background: rgba(0,61,165,0.12);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+        .agent-card:hover { border-color: var(--remax-red); }
+        .agent-card h4 {
+            color: var(--remax-white);
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+        .agent-card .agent-title {
+            color: var(--remax-red);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+        .agent-card p {
+            color: var(--text-light);
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+        .agent-card a {
+            color: var(--remax-white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .agent-card a:hover { color: var(--remax-red); }
 
         .cta-buttons {
             display: flex;
@@ -745,7 +568,6 @@
             justify-content: center;
             margin-bottom: 3rem;
         }
-
         .btn {
             padding: 1rem 2.5rem;
             font-size: 1rem;
@@ -756,226 +578,121 @@
             border: none;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             font-family: 'Inter', sans-serif;
         }
-
         .btn-primary {
-            background: linear-gradient(135deg, var(--gold), var(--amber));
-            color: var(--bg-dark);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            background: var(--remax-red);
+            color: white;
+            box-shadow: 0 10px 30px rgba(220,28,46,0.3);
         }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
-        }
-
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(220,28,46,0.5); background: #B5162A; }
         .btn-secondary {
             background: transparent;
-            color: var(--gold);
-            border: 2px solid var(--gold);
+            color: var(--remax-white);
+            border: 2px solid var(--remax-white);
         }
-
-        .btn-secondary:hover {
-            background: rgba(255, 215, 0, 0.1);
-            transform: translateY(-3px);
-        }
-
-        .contact-info {
-            background: rgba(212, 165, 116, 0.08);
-            border: 1px solid var(--border);
-            padding: 2.5rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-        }
-
-        .contact-info h4 {
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        .contact-info p {
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-info a {
-            color: var(--gold);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            color: var(--amber);
-            text-decoration: underline;
-        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); }
 
         .disclaimer {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: var(--text-muted);
             line-height: 1.6;
             margin-top: 2rem;
             padding-top: 2rem;
             border-top: 1px solid var(--border);
+            text-align: left;
         }
 
-        /* ============================================================================ */
-        /* FOOTER */
-        /* ============================================================================ */
-
+        /* ===== FOOTER ===== */
         footer {
             padding: 3rem 2rem;
             background: var(--bg-darker);
-            border-top: 1px solid var(--border);
             text-align: center;
-        }
-
-        footer p {
             color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            border-top: 2px solid var(--remax-red);
         }
-
-        footer a {
-            color: var(--gold);
-            text-decoration: none;
-            transition: color 0.3s ease;
+        footer a { color: var(--remax-white); text-decoration: none; }
+        footer a:hover { color: var(--remax-red); }
+        .footer-remax {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 1rem;
         }
+        .footer-remax img { height: 30px; }
 
-        footer a:hover {
-            color: var(--amber);
-        }
-
-        /* ============================================================================ */
-        /* SCROLL ANIMATIONS */
-        /* ============================================================================ */
-
+        /* ===== ANIMATIONS ===== */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transition: opacity 0.7s ease, transform 0.7s ease;
         }
-
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .slide-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .slide-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .slide-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .slide-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* ============================================================================ */
-        /* RESPONSIVE DESIGN */
-        /* ============================================================================ */
-
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .opportunity-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .review-stats {
-                grid-template-columns: 1fr 1fr;
-            }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .opportunity-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
         }
-
         @media (max-width: 480px) {
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .review-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-cta {
-                width: 100%;
-            }
-        }
-
-        /* ============================================================================ */
-        /* SMOOTH SCROLL & UTILITY */
-        /* ============================================================================ */
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--amber), transparent);
-            margin: 0;
+            .stats-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- ========================================================================== -->
-    <!-- HERO SECTION -->
-    <!-- ========================================================================== -->
-    <section id="hero">
-        <!-- Hero background: Real Monkey Maghees photo with Pexels ambient video overlay -->
-        <div class="hero-image-bg" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;">
-            <img src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_1920,c_fill,g_auto/MonkeyMaghees_Reel_1_v2hka1" alt="Monkey Maghees" style="width:100%;height:100%;object-fit:cover;opacity:0.4;filter:brightness(0.5) saturate(1.4);">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/REMAX_logo.svg/200px-REMAX_logo.svg.png" alt="RE/MAX" onerror="this.style.display='none'">
+            <span>Town & Country</span>
         </div>
-        <video class="hero-video-bg" autoplay muted loop playsinline poster="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_1920,c_fill,g_auto/518BFA37-E99C-4D6C-A8A7-B29B3D467AEF_4_5005_c_qzahbl" style="mix-blend-mode:overlay;opacity:0.25;">
-            <source src="https://videos.pexels.com/video-files/3196487/3196487-uhd_2560_1440_25fps.mp4" type="video/mp4">
-        </video>
+        <ul class="navbar-links">
+            <li><a href="#stats">Numbers</a></li>
+            <li><a href="#opportunity">Opportunity</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#story">Story</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#cta" class="nav-cta">Contact Agents</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero">
+        <img class="hero-bg-img" src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_1920,c_fill,g_auto/A3D30193-5B21-42EF-8525-4F608E3260AA_4_5005_c_fcwxce" alt="Monkey Maghees Bar Interior">
         <div id="three-container"></div>
         <div class="hero-content">
-            <h1>OWN A CASH MACHINE</h1>
-            <p class="subtitle">Monkey Maghees — Poughkeepsie's Legendary Bar | Asset Sale | <strong style="color: var(--gold);">$150,000</strong></p>
-            <div class="hero-counter">$<span class="counter-value">0</span>K–$500K/yr Revenue</div>
-            <button class="hero-cta" onclick="document.getElementById('cta').scrollIntoView({ behavior: 'smooth' })">View the Opportunity</button>
-            <div class="scroll-indicator">
-                <svg viewBox="0 0 24 24">
-                    <polyline points="12 5 12 19"></polyline>
-                    <polyline points="19 12 12 19 5 12"></polyline>
-                </svg>
+            <div class="hero-badge">RE/MAX Town & Country — Exclusive Listing</div>
+            <h1>OWN A <em>CASH MACHINE</em></h1>
+            <p class="subtitle">Monkey Maghees — Poughkeepsie's Legendary Bar | Turnkey Asset Sale</p>
+            <div class="hero-counter">$<span class="counter-value">0</span>K – $500K/yr Revenue</div>
+            <div class="hero-price">Asking Price: <span>$150,000</span></div>
+            <div class="hero-buttons">
+                <a href="#cta" class="btn btn-primary">Request Financials</a>
+                <a href="#gallery" class="btn btn-secondary">See the Venue</a>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24"><polyline points="12 5 12 19"></polyline><polyline points="19 12 12 19 5 12"></polyline></svg>
         </div>
     </section>
 
-    <!-- ========================================================================== -->
-    <!-- BY THE NUMBERS SECTION -->
-    <!-- ========================================================================== -->
+    <!-- ===== BY THE NUMBERS ===== -->
     <section id="stats">
         <h2 class="section-title">By the <span>Numbers</span></h2>
+        <p class="section-subtitle">Historical performance that speaks for itself</p>
         <div class="stats-grid">
             <div class="stat-card fade-in">
-                <div class="stat-number"><span class="count-up" data-target="400">0</span>K+</div>
-                <div class="stat-label">Annual Revenue</div>
+                <div class="stat-number">$<span class="count-up" data-target="500">0</span>K</div>
+                <div class="stat-label">Annual Revenue (High)</div>
             </div>
             <div class="stat-card fade-in">
                 <div class="stat-number"><span class="count-up" data-target="400">0</span>+</div>
@@ -992,549 +709,434 @@
         </div>
     </section>
 
-    <!-- ========================================================================== -->
-    <!-- THE OPPORTUNITY SECTION -->
-    <!-- ========================================================================== -->
+    <!-- ===== THE OPPORTUNITY ===== -->
     <section id="opportunity">
-        <div class="opportunity-container">
-            <h2 class="section-title">The <span>Opportunity</span></h2>
-            <div class="opportunity-grid">
-                <div class="opportunity-card fade-in">
-                    <div class="opportunity-icon">🎯</div>
-                    <h3>Turnkey Operation</h3>
-                    <p>Walk in and start earning immediately. Established customer base, proven systems, and experienced staff ready to support your success.</p>
-                </div>
-                <div class="opportunity-card fade-in">
-                    <div class="opportunity-icon">📜</div>
-                    <h3>All Licenses In Place</h3>
-                    <p>Liquor license, health permit, and food service license—all active and transferable. No waiting, no licensing delays. Ready to operate day one.</p>
-                </div>
-                <div class="opportunity-card fade-in">
-                    <div class="opportunity-icon">💰</div>
-                    <h3>Cash Business Model</h3>
-                    <p>Primarily cash transactions mean immediate revenue recognition, minimal payment processing delays, and strong daily cash flow.</p>
-                </div>
-                <div class="opportunity-card fade-in">
-                    <div class="opportunity-icon">🍽️</div>
-                    <h3>Food Revenue Upside</h3>
-                    <p>Small kitchen with existing equipment and permits. Limited menu keeps overhead low while capturing food service revenue with high margins.</p>
-                </div>
-                <div class="opportunity-card fade-in">
-                    <div class="opportunity-icon">🤝</div>
-                    <h3>Owner Transition Support</h3>
-                    <p>Current owner will assist new owner for several months. Learn the business, meet regulars, and ensure smooth handoff of all operations.</p>
-                </div>
-                <div class="opportunity-card fade-in">
-                    <div class="opportunity-icon">📍</div>
-                    <h3>Prime Location</h3>
-                    <p>40 Vassar Rd in a premium commercial complex next to Dunkin' and Rite Aid. Abundant parking and high foot traffic from anchoring businesses.</p>
-                </div>
+        <h2 class="section-title">The <span>Opportunity</span></h2>
+        <p class="section-subtitle">Everything you need to walk in and start earning</p>
+        <div class="opportunity-grid">
+            <div class="opportunity-card fade-in">
+                <div class="opportunity-icon">&#127919;</div>
+                <h3>Turnkey Operation</h3>
+                <p>Walk in and start earning immediately. Established customer base, proven systems, and experienced staff ready to support your success.</p>
+            </div>
+            <div class="opportunity-card fade-in">
+                <div class="opportunity-icon">&#128220;</div>
+                <h3>All Licenses In Place</h3>
+                <p>Liquor license, health permit, and food service license — all active and transferable. No waiting. Ready to operate day one.</p>
+            </div>
+            <div class="opportunity-card fade-in">
+                <div class="opportunity-icon">&#128176;</div>
+                <h3>Cash Business Model</h3>
+                <p>Primarily cash transactions mean immediate revenue recognition, minimal payment processing delays, and strong daily cash flow.</p>
+            </div>
+            <div class="opportunity-card fade-in">
+                <div class="opportunity-icon">&#127860;</div>
+                <h3>Food Revenue Upside</h3>
+                <p>Small kitchen with existing equipment and permits. Limited menu keeps overhead low while capturing food service revenue.</p>
+            </div>
+            <div class="opportunity-card fade-in">
+                <div class="opportunity-icon">&#129309;</div>
+                <h3>Owner Transition Support</h3>
+                <p>Current owner will assist new owner for several months. Learn the business, meet regulars, and ensure smooth handoff.</p>
+            </div>
+            <div class="opportunity-card fade-in">
+                <div class="opportunity-icon">&#128205;</div>
+                <h3>Prime Location</h3>
+                <p>40 Vassar Rd in a premium commercial complex next to Dunkin' and Rite Aid. Abundant parking and high foot traffic.</p>
             </div>
         </div>
     </section>
 
-    <!-- ========================================================================== -->
-    <!-- WHAT'S INCLUDED SECTION -->
-    <!-- ========================================================================== -->
+    <!-- ===== WHAT'S INCLUDED ===== -->
     <section id="whats-included">
         <h2 class="section-title">What's <span>Included</span></h2>
+        <p class="section-subtitle">Everything transfers with the sale</p>
         <div class="included-grid">
-            <div class="flip-card fade-in">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">🍻 Liquor License</div>
-                    <div class="flip-card-back">Active NY liquor license. Transferable immediately upon sale closure.</div>
-                </div>
-            </div>
-            <div class="flip-card fade-in">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">✓ Health & Food Permits</div>
-                    <div class="flip-card-back">All permits current and active. Transfer included in sale.</div>
-                </div>
-            </div>
-            <div class="flip-card fade-in">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">🎱 Pool Tables</div>
-                    <div class="flip-card-back">Two pool tables in great condition. Additional revenue generator and customer draw.</div>
-                </div>
-            </div>
-            <div class="flip-card fade-in">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">🎯 Dart Board</div>
-                    <div class="flip-card-back">Professional dart board. Popular with regulars and league play.</div>
-                </div>
-            </div>
-            <div class="flip-card fade-in">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">🎵 Sound System</div>
-                    <div class="flip-card-back">Complete sound system and live music setup. Host regular Friday night performances.</div>
-                </div>
-            </div>
-            <div class="flip-card fade-in">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">🍳 Kitchen Equipment</div>
-                    <div class="flip-card-back">All kitchen equipment, appliances, and small food service setup included.</div>
-                </div>
-            </div>
-            <div class="flip-card fade-in">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">🍸 Bar Equipment</div>
-                    <div class="flip-card-back">Full bar setup: dispensers, coolers, taps, glasses, and all operational equipment.</div>
-                </div>
-            </div>
-            <div class="flip-card fade-in">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">👥 Customer Base & Goodwill</div>
-                    <div class="flip-card-back">Loyal 16+ year customer base and established community goodwill included.</div>
-                </div>
-            </div>
+            <div class="flip-card fade-in"><div class="flip-card-inner">
+                <div class="flip-card-front">&#127867; Liquor License</div>
+                <div class="flip-card-back">Active NY liquor license. Transferable upon sale closure.</div>
+            </div></div>
+            <div class="flip-card fade-in"><div class="flip-card-inner">
+                <div class="flip-card-front">&#9989; Health & Food Permits</div>
+                <div class="flip-card-back">All permits current and active. Transfer included in sale.</div>
+            </div></div>
+            <div class="flip-card fade-in"><div class="flip-card-inner">
+                <div class="flip-card-front">&#127921; 2 Pool Tables</div>
+                <div class="flip-card-back">Great condition. Additional revenue generator and customer draw.</div>
+            </div></div>
+            <div class="flip-card fade-in"><div class="flip-card-inner">
+                <div class="flip-card-front">&#127919; Dart Board</div>
+                <div class="flip-card-back">Professional dart board. Popular with regulars and league play.</div>
+            </div></div>
+            <div class="flip-card fade-in"><div class="flip-card-inner">
+                <div class="flip-card-front">&#127925; Sound System</div>
+                <div class="flip-card-back">Complete sound system and live music setup. Friday night performances.</div>
+            </div></div>
+            <div class="flip-card fade-in"><div class="flip-card-inner">
+                <div class="flip-card-front">&#127859; Kitchen Equipment</div>
+                <div class="flip-card-back">All kitchen equipment, appliances, and small food service setup.</div>
+            </div></div>
+            <div class="flip-card fade-in"><div class="flip-card-inner">
+                <div class="flip-card-front">&#127866; Full Bar Equipment</div>
+                <div class="flip-card-back">Dispensers, coolers, taps, glasses, and all operational equipment.</div>
+            </div></div>
+            <div class="flip-card fade-in"><div class="flip-card-inner">
+                <div class="flip-card-front">&#128101; Customer Base & Goodwill</div>
+                <div class="flip-card-back">Loyal 16+ year customer base and established community goodwill.</div>
+            </div></div>
         </div>
     </section>
 
-    <!-- ========================================================================== -->
-    <!-- VENUE GALLERY SECTION -->
-    <!-- ========================================================================== -->
+    <!-- ===== VENUE GALLERY — ALL 29 CLOUDINARY ASSETS ===== -->
     <section id="gallery">
         <h2 class="section-title">The <span>Venue</span></h2>
+        <p class="section-subtitle">Real photos of Monkey Maghees</p>
         <div class="gallery-grid">
-            <div class="gallery-item fade-in">
-                <div class="gallery-label">
-                    <h4>The Bar</h4>
-                    <p>Where the magic happens</p>
-                </div>
+            <!-- Exterior — storefront with Monkey Maghees sign (FEATURED) -->
+            <div class="gallery-item featured fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_900,h_500,c_fill,g_auto/7730434D-1431-4082-B21F-8A05B351CCC6_et3nxv')">
+                <div class="gallery-label"><h4>Monkey Maghees Storefront</h4><p>40 Vassar Rd, Poughkeepsie</p></div>
             </div>
-            <div class="gallery-item fade-in">
-                <div class="gallery-label">
-                    <h4>Pool & Games</h4>
-                    <p>Two tables, darts & more</p>
-                </div>
+            <!-- Aerial drone shot (FEATURED) -->
+            <div class="gallery-item featured fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_900,h_500,c_fill,g_auto/8E909C33-744F-4AB0-B100-657A1C79071A_1_105_c_wzxrwz')">
+                <div class="gallery-label"><h4>Aerial View — Strip Mall</h4><p>Premium commercial complex</p></div>
             </div>
-            <div class="gallery-item fade-in">
-                <div class="gallery-label">
-                    <h4>Live Music Fridays</h4>
-                    <p>Packed house every week</p>
-                </div>
+            <!-- Bar counter wide angle -->
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/A3D30193-5B21-42EF-8525-4F608E3260AA_4_5005_c_fcwxce')">
+                <div class="gallery-label"><h4>The Bar</h4><p>Full-service bar with ceiling fan</p></div>
             </div>
-            <div class="gallery-item fade-in">
-                <div class="gallery-label">
-                    <h4>The Atmosphere</h4>
-                    <p>Neon glow, good vibes</p>
-                </div>
+            <!-- Bar taps and tin ceiling -->
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/C487A34C-10F7-4656-A705-F3906DBF641B_4_5005_c_rascyk')">
+                <div class="gallery-label"><h4>Bar Taps & Tin Ceiling</h4><p>Classic bar atmosphere</p></div>
             </div>
-            <div class="gallery-item fade-in">
-                <div class="gallery-label">
-                    <h4>Food & Kitchen</h4>
-                    <p>Revenue upside built in</p>
-                </div>
+            <!-- Bar with bottles on shelves -->
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/E74839C3-B149-4703-9948-2518367140CA_4_5005_c_azanxn')">
+                <div class="gallery-label"><h4>Bar Counter & Bottles</h4><p>Fully stocked and ready</p></div>
             </div>
-            <div class="gallery-item fade-in">
-                <div class="gallery-label">
-                    <h4>Event Nights</h4>
-                    <p>200-400+ every single day</p>
-                </div>
+            <!-- Entrance looking out -->
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/F63EA068-F8B0-4F82-93F0-981389B40C38_4_5005_c_gznna9')">
+                <div class="gallery-label"><h4>Entrance & Bar</h4><p>Welcoming front of house</p></div>
             </div>
-        </div>
-        <p style="text-align: center; color: var(--text-muted); margin-top: 3rem; font-size: 0.85rem;">
-            Actual Monkey Maghees photos. Request a private showing to experience it in person.
-        </p>
-
-        <!-- SCROLLING PHOTO STRIP — remaining real venue photos -->
-        <div class="photo-strip" style="margin-top: 3rem; overflow: hidden; position: relative;">
-            <div class="photo-strip-track" style="display: flex; gap: 1rem; animation: scrollStrip 40s linear infinite; width: max-content;">
-                <img src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_400,h_280,c_fill,g_auto/D20F357F-0696-4EAF-8D22-0C59DB1CEBBF_4_5005_c_xfq6ma" alt="Monkey Maghees" style="border-radius:10px;flex-shrink:0;">
-                <img src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_400,h_280,c_fill,g_auto/C487A34C-10F7-4656-A705-F3906DBF641B_4_5005_c_rascyk" alt="Monkey Maghees" style="border-radius:10px;flex-shrink:0;">
-                <img src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_400,h_280,c_fill,g_auto/A2A34802-3EA8-419E-93EE-758F01A774DD_4_5005_c_ytdnod" alt="Monkey Maghees" style="border-radius:10px;flex-shrink:0;">
-                <img src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_400,h_280,c_fill,g_auto/7730434D-1431-4082-B21F-8A05B351CCC6_et3nxv" alt="Monkey Maghees" style="border-radius:10px;flex-shrink:0;">
-                <img src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_400,h_280,c_fill,g_auto/517742A5-F663-4B55-95E2-38AF5B6713EA_4_5005_c_fki9fq" alt="Monkey Maghees" style="border-radius:10px;flex-shrink:0;">
-                <img src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_400,h_280,c_fill,g_auto/12501CF3-9732-4273-9F9D-B82E88223A1D_4_5005_c_vpzqki" alt="Monkey Maghees" style="border-radius:10px;flex-shrink:0;">
-                <img src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_400,h_280,c_fill,g_auto/8816D5CD-0BC4-450E-A686-85DE237F8EE5_4_5005_c_psanuc" alt="Monkey Maghees" style="border-radius:10px;flex-shrink:0;">
-                <img src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_400,h_280,c_fill,g_auto/3025F548-0459-4B17-B36C-692A67D55BAD_4_5005_c_bxndei" alt="Monkey Maghees" style="border-radius:10px;flex-shrink:0;">
-                <img src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_400,h_280,c_fill,g_auto/679B1205-A76B-45E7-A43F-A9504CC247A3_4_5005_c_xeaz1x" alt="Monkey Maghees" style="border-radius:10px;flex-shrink:0;">
-                <img src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_400,h_280,c_fill,g_auto/MonkeyMaghees_Reel_1_v2hka1" alt="Monkey Maghees Reel" style="border-radius:10px;flex-shrink:0;">
-                <!-- Duplicate for seamless loop -->
-                <img src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_400,h_280,c_fill,g_auto/D20F357F-0696-4EAF-8D22-0C59DB1CEBBF_4_5005_c_xfq6ma" alt="Monkey Maghees" style="border-radius:10px;flex-shrink:0;">
-                <img src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_400,h_280,c_fill,g_auto/C487A34C-10F7-4656-A705-F3906DBF641B_4_5005_c_rascyk" alt="Monkey Maghees" style="border-radius:10px;flex-shrink:0;">
-                <img src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_400,h_280,c_fill,g_auto/A2A34802-3EA8-419E-93EE-758F01A774DD_4_5005_c_ytdnod" alt="Monkey Maghees" style="border-radius:10px;flex-shrink:0;">
-                <img src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_400,h_280,c_fill,g_auto/7730434D-1431-4082-B21F-8A05B351CCC6_et3nxv" alt="Monkey Maghees" style="border-radius:10px;flex-shrink:0;">
-                <img src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_400,h_280,c_fill,g_auto/517742A5-F663-4B55-95E2-38AF5B6713EA_4_5005_c_fki9fq" alt="Monkey Maghees" style="border-radius:10px;flex-shrink:0;">
+            <!-- Pool table 1 -->
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/518BFA37-E99C-4D6C-A8A7-B29B3D467AEF_4_5005_c_qzahbl')">
+                <div class="gallery-label"><h4>Pool Tables</h4><p>Two tables, rustic wood walls</p></div>
+            </div>
+            <!-- Pool table 2 wide -->
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/28823ABE-BC07-4A42-82D7-21D7B76034FC_4_5005_c_oyz3hd')">
+                <div class="gallery-label"><h4>Game Room</h4><p>Pool, darts & more</p></div>
+            </div>
+            <!-- Pool perspective -->
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/8641E95B-833F-4270-B3AE-75A76596F6D0_4_5005_c_kph7kv')">
+                <div class="gallery-label"><h4>Pool Area Perspective</h4><p>Spacious game area</p></div>
+            </div>
+            <!-- Party signs area -->
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/F6B48B60-0C49-4F97-930A-525A365F34A1_4_5005_c_or9bev')">
+                <div class="gallery-label"><h4>Event & Party Space</h4><p>Host any kind of party</p></div>
+            </div>
+            <!-- Exterior strip mall -->
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/MonkeyMaghees_Reel_1_v2hka1')">
+                <div class="gallery-label"><h4>Shopping Plaza</h4><p>Next to Dunkin' & more</p></div>
+            </div>
+            <!-- Hallway/restroom area -->
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/A2A34802-3EA8-419E-93EE-758F01A774DD_4_5005_c_ytdnod')">
+                <div class="gallery-label"><h4>Interior Details</h4><p>Well-maintained throughout</p></div>
+            </div>
+            <!-- Remaining venue photos -->
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/D20F357F-0696-4EAF-8D22-0C59DB1CEBBF_4_5005_c_xfq6ma')">
+                <div class="gallery-label"><h4>Interior View</h4><p>Spacious layout</p></div>
+            </div>
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/517742A5-F663-4B55-95E2-38AF5B6713EA_4_5005_c_fki9fq')">
+                <div class="gallery-label"><h4>Bar Seating</h4><p>Room for everyone</p></div>
+            </div>
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/12501CF3-9732-4273-9F9D-B82E88223A1D_4_5005_c_vpzqki')">
+                <div class="gallery-label"><h4>Venue Interior</h4><p>16+ years of history</p></div>
+            </div>
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/8816D5CD-0BC4-450E-A686-85DE237F8EE5_4_5005_c_psanuc')">
+                <div class="gallery-label"><h4>Bar Area</h4><p>Classic neighborhood pub</p></div>
+            </div>
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/3025F548-0459-4B17-B36C-692A67D55BAD_4_5005_c_bxndei')">
+                <div class="gallery-label"><h4>Seating & Decor</h4><p>Warm, inviting atmosphere</p></div>
+            </div>
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/679B1205-A76B-45E7-A43F-A9504CC247A3_4_5005_c_xeaz1x')">
+                <div class="gallery-label"><h4>Interior Details</h4><p>Character throughout</p></div>
+            </div>
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/309DDB8F-9860-49C2-9DB0-F9D27D0E4820_cumtzs')">
+                <div class="gallery-label"><h4>Full Venue Shot</h4><p>Hi-res detail</p></div>
+            </div>
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/88EA74DA-2243-4E9C-A75F-514F80603F00_4_5005_c_kbmqxg')">
+                <div class="gallery-label"><h4>Additional View</h4><p>Every angle covered</p></div>
+            </div>
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/71CBF027-8CCD-44F4-992A-0278BA835BF2_4_5005_c_q9vw0r')">
+                <div class="gallery-label"><h4>Venue Feature</h4><p>Built for business</p></div>
+            </div>
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/29A759B4-B3DB-4469-80D9-2EC9F1BB65AB_4_5005_c_wktvxi')">
+                <div class="gallery-label"><h4>More Interior</h4><p>Turnkey condition</p></div>
+            </div>
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/4B36840E-F3FA-49F1-BE8D-AA0B673E19CE_4_5005_c_j1mulg')">
+                <div class="gallery-label"><h4>Venue Detail</h4><p>Ready for new ownership</p></div>
+            </div>
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/7D6B4039-162B-455D-9867-B1CCBA7631F3_4_5005_c_rydmex')">
+                <div class="gallery-label"><h4>Interior Space</h4><p>Plenty of room</p></div>
+            </div>
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/6BFA2CAC-E41C-4BBB-BE80-E0B69436CD75_4_5005_c_glehxz')">
+                <div class="gallery-label"><h4>Bar Feature</h4><p>Established venue</p></div>
+            </div>
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/1A3E4F64-9D4B-401F-B212-9DE58FACAC92_4_5005_c_seeb2p')">
+                <div class="gallery-label"><h4>Additional Area</h4><p>Well-utilized space</p></div>
+            </div>
+            <div class="gallery-item fade-in" style="background-image:url('https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_600,h_400,c_fill,g_auto/4EC2DE0C-E8DB-41DF-8C88-68E614CD2109_4_5005_c_iltthp')">
+                <div class="gallery-label"><h4>Final View</h4><p>Come see it in person</p></div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================================================== -->
-    <!-- THE STORY SECTION -->
-    <!-- ========================================================================== -->
+    <!-- ===== FLOOR PLAN ===== -->
+    <section id="floorplan">
+        <h2 class="section-title">Floor <span>Plan</span></h2>
+        <p class="section-subtitle">Efficient layout optimized for bar operations</p>
+        <img class="floorplan-img fade-in" src="https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_900/7730434D-1431-4082-B21F-8A05B351CCC6_et3nxv" alt="Monkey Maghees Floor Plan"
+             onerror="this.src='https://res.cloudinary.com/dtmh3eypz/image/upload/f_auto,q_auto,w_900/D7A18D28-FE2D-4ED6-87D7-29B3272AB7DD_4_5005_c_fyw72h'">
+    </section>
+
+    <!-- ===== THE STORY ===== -->
     <section id="story">
         <div class="story-container">
             <h2 class="section-title">The <span>Story</span></h2>
-            
             <p class="story-text fade-in">
-                <strong>Monkey Maghees is Poughkeepsie.</strong> For over 16 years, this legendary bar has been the heartbeat of the Hudson Valley. While countless neighborhood bars have shuttered across the Northeast—victims of changing demographics and competition—Monkey Maghees has not just survived; it has thrived.
+                <strong>Monkey Maghees is Poughkeepsie.</strong> For over 16 years, this legendary bar has been the heartbeat of the community. While countless neighborhood bars have shuttered across the Northeast, Monkey Maghees has not just survived — it has thrived.
             </p>
-
             <p class="story-text fade-in">
-                It's a <strong>"last of its kind"</strong> venue in an era when authentic dive bars and neighborhood pubs are becoming extinct. That rarity, combined with consistent profitability and a fiercely loyal customer base, makes this an exceptional opportunity for the right buyer.
+                It is a <strong>"last of its kind"</strong> venue in an era when authentic neighborhood pubs are becoming extinct. That rarity, combined with consistent profitability and a fiercely loyal customer base, makes this an exceptional opportunity for the right buyer.
             </p>
-
             <div class="story-highlight fade-in">
-                "This is the real deal. A genuine neighborhood bar with the revenue to prove it. No hype, no shortcuts—just a solid, profitable business with deep community roots."
+                "A genuine neighborhood bar with the revenue to prove it. No hype, no shortcuts — just a solid, profitable business with deep community roots."
             </div>
-
             <p class="story-text fade-in">
-                Monkey Maghees operates a <strong>proven, sustainable model</strong>: happy hour Mon-Fri (5-7pm), pool tournaments, darts, live music on Fridays, and a loyal customer base that spans decades. Whether it's a Friday night packed with regulars or a casual Tuesday afternoon, the bar maintains consistent foot traffic and revenue.
+                Monkey Maghees operates a <strong>proven, sustainable model</strong>: happy hour Mon-Fri (5-7pm), pool tournaments, darts, live music on Fridays, and a loyal customer base that spans decades. Whether it is a packed Friday night or a casual Tuesday, the bar maintains consistent traffic and revenue.
             </p>
-
             <p class="story-text fade-in">
-                The location is <strong>unbeatable</strong>. 40 Vassar Rd in a premium commercial complex with abundant parking and visibility. Proximity to Dunkin' and Rite Aid means constant foot traffic from neighboring businesses. The space itself—with its bar, pool area, kitchen, and event space—is configured for maximum operational efficiency and revenue generation.
+                The location at <strong>40 Vassar Rd</strong> in a premium commercial complex with abundant parking and visibility ensures year-round foot traffic. Proximity to Dunkin' and Rite Aid means constant complementary traffic.
             </p>
-
-            <p class="story-text fade-in">
-                <strong>This is a rare find:</strong> a profitable bar with real numbers to back it up, licenses already in place, a turnkey operation ready for immediate cash flow, and an owner willing to stick around to help with the transition.
-            </p>
-
             <div class="review-stats">
-                <div class="review-stat fade-in">
-                    <div class="number">86%</div>
-                    <div class="label">Positive Reviews</div>
-                </div>
-                <div class="review-stat fade-in">
-                    <div class="number">214+</div>
-                    <div class="label">Total Reviews</div>
-                </div>
-                <div class="review-stat fade-in">
-                    <div class="number">16+</div>
-                    <div class="label">Years Operating</div>
-                </div>
+                <div class="review-stat fade-in"><div class="number">86%</div><div class="label">Positive Reviews</div></div>
+                <div class="review-stat fade-in"><div class="number">214+</div><div class="label">Total Reviews</div></div>
+                <div class="review-stat fade-in"><div class="number">16+</div><div class="label">Years Operating</div></div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================================================== -->
-    <!-- LOCATION SECTION -->
-    <!-- ========================================================================== -->
+    <!-- ===== LOCATION ===== -->
     <section id="location">
-        <h2 class="section-title" style="margin-bottom: 3rem;">The <span>Location</span></h2>
+        <h2 class="section-title">The <span>Location</span></h2>
         <div class="location-container">
             <div class="location-info fade-in">
                 <h3>Prime Commercial Hub</h3>
-                <p><strong>40 Vassar Rd, Poughkeepsie, NY 12603</strong></p>
-                <p>Dutchess County, Hudson Valley</p>
-                
-                <div class="location-detail">Premium commercial complex location</div>
+                <p style="margin-bottom:1rem;"><strong>40 Vassar Rd, Poughkeepsie, NY 12603</strong><br>Dutchess County, Hudson Valley</p>
+                <div class="location-detail">Premium commercial complex</div>
                 <div class="location-detail">Next to Dunkin' & Rite Aid</div>
-                <div class="location-detail">Abundant parking and visibility</div>
+                <div class="location-detail">Abundant parking & visibility</div>
                 <div class="location-detail">High foot traffic from anchor tenants</div>
                 <div class="location-detail">Easy access from Route 9</div>
                 <div class="location-detail">Established commercial zone</div>
-
-                <p style="margin-top: 2rem; color: var(--text-muted); font-size: 0.9rem;">
-                    Location drives consistency. Repeat customers, complementary retail traffic, and strong visibility ensure year-round revenue stability.
-                </p>
             </div>
             <div class="location-map fade-in">
-                <div>
-                    <p><strong>40 Vassar Rd</strong></p>
-                    <p>Poughkeepsie, NY 12603</p>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2983.5!2d-73.8855!3d41.6868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89dd3f0000000000%3A0x0!2s40+Vassar+Rd%2C+Poughkeepsie%2C+NY+12603!5e0!3m2!1sen!2sus!4v1710000000000"
-                        width="100%" height="300" style="border:0; border-radius: 8px; margin-top: 1rem;"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2983.5!2d-73.8855!3d41.6868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s40+Vassar+Rd%2C+Poughkeepsie%2C+NY+12603!5e0!3m2!1sen!2sus!4v1710000000000"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
 
-    <!-- ========================================================================== -->
-    <!-- CTA / CONTACT SECTION -->
-    <!-- ========================================================================== -->
+    <!-- ===== CTA / CONTACT AGENTS ===== -->
     <section id="cta">
         <div class="cta-content">
             <h2>Ready to Own Poughkeepsie's <span>Most Profitable Bar?</span></h2>
-            <p>
-                This is a rare opportunity to acquire a proven, cash-flowing business with licenses in place, a loyal customer base, and immediate revenue potential. Don't miss it.
-            </p>
+            <p>This is a rare opportunity to acquire a proven, cash-flowing business with all licenses in place, a loyal customer base, and immediate revenue potential. Contact your listing agents today.</p>
 
-            <div class="contact-info">
-                <h4>Contact Ryan Sylvestri</h4>
-                <p><strong>Listing Agent</strong> — TheReelistRealtor</p>
-                <p>NY Licensed Associate Real Estate Broker</p>
-                <p style="margin-top: 1rem;">
-                    📧 <a href="mailto:ryansylvestri@gmail.com">ryansylvestri@gmail.com</a>
-                </p>
+            <div class="agents-grid">
+                <div class="agent-card fade-in">
+                    <h4>Ryan Sylvestri</h4>
+                    <div class="agent-title">Licensed Associate RE Broker</div>
+                    <p>RE/MAX Town & Country</p>
+                    <p>&#128231; <a href="mailto:ryansylvestri@gmail.com">ryansylvestri@gmail.com</a></p>
+                </div>
+                <div class="agent-card fade-in">
+                    <h4>Michael Dunstan</h4>
+                    <div class="agent-title">Licensed Real Estate Salesperson</div>
+                    <p>RE/MAX Town & Country</p>
+                    <p>&#128222; <a href="tel:9144899325">(914) 489-9325</a></p>
+                </div>
             </div>
 
             <div class="cta-buttons">
-                <a href="mailto:ryansylvestri@gmail.com?subject=Monkey Maghees - Request for Financials" class="btn btn-primary">Request Financials Package</a>
-                <a href="mailto:ryansylvestri@gmail.com?subject=Monkey Maghees - Schedule a Showing" class="btn btn-secondary">Schedule a Private Showing</a>
+                <a href="mailto:ryansylvestri@gmail.com?subject=Monkey%20Maghees%20-%20Request%20for%20Financials" class="btn btn-primary">Request Financials Package</a>
+                <a href="mailto:ryansylvestri@gmail.com?subject=Monkey%20Maghees%20-%20Schedule%20a%20Showing" class="btn btn-secondary">Schedule a Private Showing</a>
             </div>
 
             <div class="disclaimer">
                 <p><strong>Important Disclosures:</strong></p>
-                <p>All financial figures and revenue information represent historical performance based on provided documents. Past results do not guarantee future performance. This is an asset sale only—real estate is not included. All licenses (liquor, health, food service) are subject to transfer approval by relevant NY state and local authorities. This marketing material is provided for informational purposes only and does not constitute an offer to sell or solicitation to buy.</p>
-                <p style="margin-top: 1rem;">For more information, contact Ryan Sylvestri directly.</p>
+                <p>All financial figures represent historical performance based on provided documents. Past results do not guarantee future performance. This is an asset sale only — real estate is not included. All licenses (liquor, health, food service) are subject to transfer approval by relevant NY state and local authorities. This marketing material is for informational purposes only and does not constitute an offer to sell or solicitation to buy.</p>
             </div>
         </div>
     </section>
 
-    <!-- ========================================================================== -->
-    <!-- FOOTER -->
-    <!-- ========================================================================== -->
+    <!-- ===== FOOTER ===== -->
     <footer>
+        <div class="footer-remax">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/REMAX_logo.svg/200px-REMAX_logo.svg.png" alt="RE/MAX" onerror="this.style.display='none'">
+            <span style="color:var(--remax-white);font-weight:700;">RE/MAX Town & Country</span>
+        </div>
         <p><strong>Monkey Maghees Asset Sale</strong></p>
-        <p>Listed by <a href="mailto:ryansylvestri@gmail.com">Ryan Sylvestri</a> — TheReelistRealtor</p>
-        <p>NY Licensed Associate Real Estate Broker</p>
-        <p>Website by <a href="#">Sylvestri Systems</a></p>
-        <p style="margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1rem;">
-            © 2026 Monkey Maghees. This is an asset sale only. Real estate not included. All licenses subject to transfer approval.
+        <p>Co-Listed by <a href="mailto:ryansylvestri@gmail.com">Ryan Sylvestri</a> & <a href="tel:9144899325">Michael Dunstan</a></p>
+        <p>RE/MAX Town & Country — Fishkill, NY</p>
+        <p style="margin-top:1rem;">Website by <a href="#">Sylvestri Systems</a></p>
+        <p style="margin-top:1rem; border-top:1px solid var(--border); padding-top:1rem;">
+            &copy; 2026 Monkey Maghees. Asset sale only. Real estate not included. All licenses subject to transfer approval.
         </p>
     </footer>
 
-    <!-- ========================================================================== -->
-    <!-- THREE.JS + GSAP + ANIMATION SCRIPTS -->
-    <!-- ========================================================================== -->
+    <!-- ===== SCRIPTS ===== -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
     <script>
-        // ====================================================================
-        // THREE.JS HERO BACKGROUND - 3D PARTICLE/BOKEH EFFECT
-        // ====================================================================
-        function initHeroBackground() {
+        // ===== THREE.JS PARTICLE BACKGROUND =====
+        (function() {
             const container = document.getElementById('three-container');
-            const width = container.clientWidth;
-            const height = container.clientHeight;
-
-            // Scene setup
+            if (!container) return;
             const scene = new THREE.Scene();
-            scene.fog = new THREE.Fog(0x0a0a0a, 100, 1000);
-            
-            const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-            camera.position.z = 50;
-
-            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-            renderer.setSize(width, height);
-            renderer.setClearColor(0x0a0a0a, 0);
-            renderer.setPixelRatio(window.devicePixelRatio);
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
             container.appendChild(renderer.domElement);
 
-            // Create particles with warm amber/gold colors
-            const particleCount = 150;
-            const geometry = new THREE.BufferGeometry();
+            const particleCount = 800;
             const positions = new Float32Array(particleCount * 3);
             const colors = new Float32Array(particleCount * 3);
-            const sizes = new Float32Array(particleCount);
-
-            const amber = new THREE.Color(0xd4a574);
-            const gold = new THREE.Color(0xffd700);
-            const purple = new THREE.Color(0x8b5cf6);
-
-            for (let i = 0; i < particleCount * 3; i += 3) {
-                positions[i] = (Math.random() - 0.5) * 200;
-                positions[i + 1] = (Math.random() - 0.5) * 200;
-                positions[i + 2] = (Math.random() - 0.5) * 200;
-
-                const colorChoice = Math.random();
-                if (colorChoice < 0.5) {
-                    amber.toArray(colors, i);
-                } else if (colorChoice < 0.8) {
-                    gold.toArray(colors, i);
-                } else {
-                    purple.toArray(colors, i);
-                }
-
-                sizes[i / 3] = Math.random() * 3 + 0.5;
+            // RE/MAX colors: red, blue, white particles
+            const palette = [
+                [0.86, 0.11, 0.18], // red
+                [0.0, 0.24, 0.65],  // blue
+                [1.0, 1.0, 1.0],    // white
+                [0.86, 0.11, 0.18], // more red
+                [0.0, 0.24, 0.65],  // more blue
+            ];
+            for (let i = 0; i < particleCount; i++) {
+                positions[i * 3] = (Math.random() - 0.5) * 20;
+                positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
+                positions[i * 3 + 2] = (Math.random() - 0.5) * 20;
+                const c = palette[Math.floor(Math.random() * palette.length)];
+                colors[i * 3] = c[0];
+                colors[i * 3 + 1] = c[1];
+                colors[i * 3 + 2] = c[2];
             }
-
+            const geometry = new THREE.BufferGeometry();
             geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
             geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-            geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
-
-            const material = new THREE.PointsMaterial({
-                size: 2,
-                vertexColors: true,
-                sizeAttenuation: true,
-                transparent: true,
-                opacity: 0.6,
-            });
-
+            const material = new THREE.PointsMaterial({ size: 0.06, vertexColors: true, transparent: true, opacity: 0.7 });
             const particles = new THREE.Points(geometry, material);
             scene.add(particles);
+            camera.position.z = 5;
 
-            // Animation loop
+            let mouseX = 0, mouseY = 0;
+            document.addEventListener('mousemove', (e) => {
+                mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+                mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+            }, { passive: true });
+
             function animate() {
                 requestAnimationFrame(animate);
-
-                particles.rotation.x += 0.0002;
-                particles.rotation.y += 0.0003;
-
-                // Subtle floating animation
-                const positionAttribute = geometry.getAttribute('position');
-                const posArray = positionAttribute.array;
-                for (let i = 0; i < posArray.length; i += 3) {
-                    posArray[i] += Math.sin(Date.now() * 0.0001 + i) * 0.01;
-                    posArray[i + 1] += Math.cos(Date.now() * 0.00008 + i) * 0.01;
-                }
-                positionAttribute.needsUpdate = true;
-
+                particles.rotation.y += 0.0008;
+                particles.rotation.x += 0.0003;
+                camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.02;
+                camera.position.y += (-mouseY * 0.5 - camera.position.y) * 0.02;
+                camera.lookAt(scene.position);
                 renderer.render(scene, camera);
             }
-
             animate();
 
-            // Handle window resize
             window.addEventListener('resize', () => {
-                const newWidth = container.clientWidth;
-                const newHeight = container.clientHeight;
-                camera.aspect = newWidth / newHeight;
+                camera.aspect = window.innerWidth / window.innerHeight;
                 camera.updateProjectionMatrix();
-                renderer.setSize(newWidth, newHeight);
-            });
-        }
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }, { passive: true });
+        })();
 
-        // Initialize hero when DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initHeroBackground);
-        } else {
-            initHeroBackground();
-        }
+        // ===== HERO COUNTER ANIMATION =====
+        (function() {
+            const counter = document.querySelector('.counter-value');
+            if (!counter) return;
+            let current = 0;
+            const target = 300;
+            const duration = 2000;
+            const start = performance.now();
+            function update(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                current = Math.floor(eased * target);
+                counter.textContent = current;
+                if (progress < 1) requestAnimationFrame(update);
+            }
+            requestAnimationFrame(update);
+        })();
 
-        // ====================================================================
-        // COUNTER ANIMATIONS - COUNT UP ON SCROLL
-        // ====================================================================
-        function animateCounters() {
-            const counters = document.querySelectorAll('.count-up');
-            
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-target'));
-                let current = 0;
-                
-                // Create an Intersection Observer for this counter
-                const observer = new IntersectionObserver((entries) => {
-                    if (entries[0].isIntersecting && current === 0) {
-                        const increment = target / 50;
-                        
-                        const updateCounter = () => {
-                            current += increment;
-                            if (current < target) {
-                                counter.textContent = Math.floor(current);
-                                requestAnimationFrame(updateCounter);
-                            } else {
-                                counter.textContent = target;
-                            }
-                        };
-                        
-                        updateCounter();
-                        observer.unobserve(counter);
+        // ===== SCROLL-TRIGGERED FADE-IN =====
+        (function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
                     }
                 });
-                
-                observer.observe(counter);
-            });
-        }
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        })();
 
-        animateCounters();
-
-        // ====================================================================
-        // HERO COUNTER ANIMATION - COUNT FROM 300-400 AT LOAD
-        // ====================================================================
-        document.addEventListener('DOMContentLoaded', () => {
-            const heroCounter = document.querySelector('.counter-value');
-            if (heroCounter) {
-                let current = 300;
-                const target = 300 + Math.random() * 100; // Between 300-400
-                
-                const updateCounter = () => {
-                    if (current < target) {
-                        current += 2;
-                        heroCounter.textContent = Math.floor(current);
-                        setTimeout(updateCounter, 20);
-                    } else {
-                        heroCounter.textContent = Math.floor(target);
+        // ===== COUNT-UP ON SCROLL =====
+        (function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.getAttribute('data-target'));
+                        const duration = 1500;
+                        const start = performance.now();
+                        function update(now) {
+                            const elapsed = now - start;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            el.textContent = Math.floor(eased * target);
+                            if (progress < 1) requestAnimationFrame(update);
+                        }
+                        requestAnimationFrame(update);
+                        observer.unobserve(el);
                     }
-                };
-                
-                setTimeout(updateCounter, 500);
-            }
-        });
-
-        // ====================================================================
-        // SCROLL TRIGGER ANIMATIONS WITH GSAP
-        // ====================================================================
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Register the scroll trigger
-        document.querySelectorAll('.fade-in').forEach(element => {
-            if (!element.classList.contains('visible')) {
-                gsap.to(element, {
-                    scrollTrigger: {
-                        trigger: element,
-                        start: 'top 80%',
-                        end: 'top 20%',
-                        onEnter: () => element.classList.add('visible'),
-                        once: true,
-                    },
-                    duration: 0.6,
                 });
-            }
-        });
+            }, { threshold: 0.5 });
+            document.querySelectorAll('.count-up').forEach(el => observer.observe(el));
+        })();
 
-        // ====================================================================
-        // STAT CARD 3D TILT EFFECT
-        // ====================================================================
+        // ===== 3D TILT ON STAT CARDS =====
         document.querySelectorAll('.stat-card').forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = (y - centerY) / 10;
-                const rotateY = (centerX - x) / 10;
-                
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            });
-            
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                card.style.transform = 'perspective(500px) rotateX(' + (-y * 8) + 'deg) rotateY(' + (x * 8) + 'deg) translateY(-5px)';
+            }, { passive: true });
             card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+                card.style.transform = 'perspective(500px) rotateX(0) rotateY(0)';
             });
         });
 
-        // ====================================================================
-        // SMOOTH SCROLL BEHAVIOR (fallback for older browsers)
-        // ====================================================================
+        // ===== SMOOTH SCROLL =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if (href !== '#') {
                     e.preventDefault();
                     const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
-        });
-
-        // ====================================================================
-        // PERFORMANCE: Request animation frame for smooth animations
-        // ====================================================================
-        window.addEventListener('scroll', () => {
-            // This ensures scroll animations are performant
-            // GSAP ScrollTrigger handles this automatically
-        }, { passive: true });
-
-        // ====================================================================
-        // LOAD EVENT - FINAL SETUP
-        // ====================================================================
-        window.addEventListener('load', () => {
-            // Ensure all animations are ready
-            document.body.style.opacity = '1';
         });
     </script>
 </body>
