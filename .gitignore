@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+.npm/
+package-lock.json
+
+# Build
+dist/
+.next/
+.astro/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Hostinger
+.hostinger/

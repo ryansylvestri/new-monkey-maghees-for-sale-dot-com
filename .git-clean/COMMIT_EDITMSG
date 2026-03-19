@@ -1,0 +1,13 @@
+Initial build: Monkey Maghees Node.js marketing site for Hostinger
+
+Node.js Express app serving a 3D immersive marketing website for the
+Monkey Maghees bar asset sale in Poughkeepsie, NY ($150,000).
+
+- Express server with gzip compression and /health endpoint
+- 19 real venue photos served via Cloudinary CDN (f_auto,q_auto)
+- Three.js particle hero, GSAP scroll animations, infinite photo strip
+- Sections: Numbers, Opportunity, Included, Gallery, Story, Location, CTA
+- Mobile-first responsive, SEO meta tags, asset sale disclaimers
+- Ready for Hostinger Node.js deployment via Git import
+
+Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>

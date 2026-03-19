@@ -1,0 +1,27 @@
+{
+  "name": "monkey-maghees-for-sale",
+  "version": "1.0.0",
+  "description": "Marketing website for Monkey Maghees bar asset sale — Poughkeepsie, NY",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "compression": "^1.7.4"
+  },
+  "keywords": [
+    "bar-for-sale",
+    "poughkeepsie",
+    "monkey-maghees",
+    "hudson-valley",
+    "asset-sale"
+  ],
+  "author": "Ryan Sylvestri — Sylvestri Systems",
+  "license": "UNLICENSED",
+  "private": true
+}
