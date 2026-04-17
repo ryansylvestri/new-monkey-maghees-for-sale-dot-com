@@ -561,6 +561,197 @@
         }
         .agent-card a:hover { color: var(--remax-red); }
 
+        /* ===== LEAD CAPTURE FORM (dark theme) ===== */
+        .lc-form-wrap {
+            max-width: 640px;
+            margin: 0 auto 3rem;
+            text-align: left;
+        }
+        .lc-form-wrap .form-section {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: rgba(0,61,165,0.08);
+        }
+        .lc-form-wrap .form-section legend {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--remax-white);
+            padding: 0 8px;
+            font-family: 'Inter', sans-serif;
+        }
+        .lc-form-wrap .form-section legend .optional {
+            font-weight: 400;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        .lc-form-wrap .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        @media (max-width: 480px) {
+            .lc-form-wrap .field-row { grid-template-columns: 1fr; }
+        }
+        .lc-form-wrap .field-group { margin-bottom: 16px; }
+        .lc-form-wrap .field-group:last-child { margin-bottom: 0; }
+        .lc-form-wrap label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-light);
+            margin-bottom: 6px;
+        }
+        .lc-form-wrap .req { color: var(--remax-red); }
+        .lc-form-wrap input[type="text"],
+        .lc-form-wrap input[type="email"],
+        .lc-form-wrap input[type="tel"],
+        .lc-form-wrap select,
+        .lc-form-wrap textarea {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            background: rgba(11,26,46,0.7);
+            color: var(--text-light);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+        .lc-form-wrap input:focus,
+        .lc-form-wrap select:focus,
+        .lc-form-wrap textarea:focus {
+            outline: none;
+            border-color: var(--remax-red);
+            box-shadow: 0 0 0 3px rgba(220,28,46,0.15);
+            background: rgba(11,26,46,0.9);
+        }
+        .lc-form-wrap input.invalid,
+        .lc-form-wrap select.invalid {
+            border-color: #e63946;
+            box-shadow: 0 0 0 3px rgba(230,57,70,0.15);
+        }
+        .lc-form-wrap select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238899AA' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 32px;
+        }
+        .lc-form-wrap textarea { resize: vertical; min-height: 80px; }
+        .lc-form-wrap .error-msg {
+            display: block;
+            font-size: 0.8rem;
+            color: #e63946;
+            min-height: 1.2em;
+            margin-top: 4px;
+        }
+        .lc-form-wrap .intent-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        @media (max-width: 500px) {
+            .lc-form-wrap .intent-options { grid-template-columns: 1fr 1fr; }
+        }
+        .lc-form-wrap .intent-card { cursor: pointer; }
+        .lc-form-wrap .intent-card input[type="radio"] {
+            position: absolute; opacity: 0; width: 0; height: 0;
+        }
+        .lc-form-wrap .intent-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 16px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            background: rgba(0,61,165,0.06);
+            transition: all 0.2s;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+        .lc-form-wrap .intent-label:hover {
+            border-color: rgba(220,28,46,0.4);
+            background: rgba(220,28,46,0.06);
+        }
+        .lc-form-wrap .intent-card input:checked + .intent-label {
+            border-color: var(--remax-red);
+            background: rgba(220,28,46,0.1);
+            box-shadow: 0 0 0 3px rgba(220,28,46,0.15);
+        }
+        .lc-form-wrap .intent-icon { font-size: 1.25rem; }
+        .lc-form-wrap .conditional-section {
+            animation: slideDown 0.3s ease-out;
+        }
+        .lc-form-wrap .form-actions { text-align: center; margin-top: 8px; }
+        .lc-form-wrap .btn-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 360px;
+            padding: 14px 32px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+            background: var(--remax-red);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: 0 10px 30px rgba(220,28,46,0.3);
+        }
+        .lc-form-wrap .btn-submit:hover { background: #B5162A; transform: translateY(-2px); box-shadow: 0 15px 40px rgba(220,28,46,0.5); }
+        .lc-form-wrap .btn-submit:active { transform: scale(0.98); }
+        .lc-form-wrap .btn-submit:disabled { background: rgba(220,28,46,0.4); cursor: not-allowed; transform: none; }
+        .lc-form-wrap .btn-loading { display: inline-flex; align-items: center; gap: 8px; }
+        .lc-form-wrap .spinner {
+            display: inline-block; width: 18px; height: 18px;
+            border: 2.5px solid rgba(255,255,255,0.3);
+            border-top-color: #fff; border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+        @keyframes slideDown { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .lc-form-wrap .form-disclaimer {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 12px;
+            line-height: 1.4;
+        }
+        .lc-form-wrap .success-message {
+            text-align: center;
+            padding: 48px 24px;
+            background: rgba(0,61,165,0.08);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+        .lc-form-wrap .success-icon {
+            width: 64px; height: 64px; margin: 0 auto 16px;
+            background: #10b981; color: #fff;
+            font-size: 2rem; font-weight: 700;
+            border-radius: 50%; display: flex;
+            align-items: center; justify-content: center;
+        }
+        .lc-form-wrap .success-message h2 { font-size: 1.5rem; margin-bottom: 8px; color: var(--remax-white); }
+        .lc-form-wrap .success-message p { color: var(--text-light); max-width: 400px; margin: 0 auto; }
+        .lc-form-wrap .error-banner {
+            background: rgba(230,57,70,0.1);
+            border: 1px solid rgba(230,57,70,0.3);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-top: 16px;
+            text-align: center;
+        }
+        .lc-form-wrap .error-banner p { color: #fca5a5; font-size: 0.9rem; }
+        .lc-form-wrap .error-banner a { color: var(--remax-white); text-decoration: underline; }
+
         .cta-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -661,7 +852,7 @@
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#story">Story</a></li>
             <li><a href="#location">Location</a></li>
-            <li><a href="#cta" class="nav-cta">Contact Agents</a></li>
+            <li><a href="#cta" class="nav-cta">Get Started</a></li>
         </ul>
     </nav>
 
@@ -945,11 +1136,11 @@
         </div>
     </section>
 
-    <!-- ===== CTA / CONTACT AGENTS ===== -->
+    <!-- ===== CTA / CONTACT AGENTS + LEAD FORM ===== -->
     <section id="cta">
         <div class="cta-content">
             <h2>Ready to Own Poughkeepsie's <span>Most Profitable Bar?</span></h2>
-            <p>This is a rare opportunity to acquire a proven, cash-flowing business with all licenses in place, a loyal customer base, and immediate revenue potential. Contact your listing agents today.</p>
+            <p>This is a rare opportunity to acquire a proven, cash-flowing business with all licenses in place, a loyal customer base, and immediate revenue potential. Fill out the form below and your listing agents will be in touch.</p>
 
             <div class="agents-grid">
                 <div class="agent-card fade-in">
@@ -966,9 +1157,147 @@
                 </div>
             </div>
 
-            <div class="cta-buttons">
-                <a href="mailto:ryansylvestri@gmail.com?subject=Monkey%20Maghees%20-%20Request%20for%20Financials" class="btn btn-primary">Request Financials Package</a>
-                <a href="mailto:ryansylvestri@gmail.com?subject=Monkey%20Maghees%20-%20Schedule%20a%20Showing" class="btn btn-secondary">Schedule a Private Showing</a>
+            <!-- ===== LEAD CAPTURE FORM ===== -->
+            <div class="lc-form-wrap">
+                <form id="leadCaptureForm" novalidate>
+                    <!-- Contact Info -->
+                    <fieldset class="form-section" id="section-contact">
+                        <legend>Your Information</legend>
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label for="firstName">First Name <span class="req">*</span></label>
+                                <input type="text" id="firstName" name="firstName" required autocomplete="given-name" placeholder="First name">
+                                <span class="error-msg" data-for="firstName"></span>
+                            </div>
+                            <div class="field-group">
+                                <label for="lastName">Last Name <span class="req">*</span></label>
+                                <input type="text" id="lastName" name="lastName" required autocomplete="family-name" placeholder="Last name">
+                                <span class="error-msg" data-for="lastName"></span>
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label for="email">Email <span class="req">*</span></label>
+                                <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
+                                <span class="error-msg" data-for="email"></span>
+                            </div>
+                            <div class="field-group">
+                                <label for="phone">Phone <span class="req">*</span></label>
+                                <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="(845) 555-0100">
+                                <span class="error-msg" data-for="phone"></span>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Intent -->
+                    <fieldset class="form-section" id="section-intent">
+                        <legend>What Are You Interested In?</legend>
+                        <div class="intent-options">
+                            <label class="intent-card">
+                                <input type="radio" name="intent" value="Buying" required>
+                                <span class="intent-label"><span class="intent-icon">&#128176;</span><span>Buy This Business</span></span>
+                            </label>
+                            <label class="intent-card">
+                                <input type="radio" name="intent" value="Investor">
+                                <span class="intent-label"><span class="intent-icon">&#128200;</span><span>Investor Inquiry</span></span>
+                            </label>
+                            <label class="intent-card">
+                                <input type="radio" name="intent" value="Not Sure">
+                                <span class="intent-label"><span class="intent-icon">&#128172;</span><span>Just Exploring</span></span>
+                            </label>
+                        </div>
+                        <span class="error-msg" data-for="intent"></span>
+                    </fieldset>
+
+                    <!-- Buyer Details (conditional) -->
+                    <fieldset class="form-section conditional-section" id="section-buyer" hidden>
+                        <legend>Tell Us More</legend>
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label for="buyerTimeline">Timeline</label>
+                                <select id="buyerTimeline" name="buyerTimeline">
+                                    <option value="">Select timeline...</option>
+                                    <option value="ASAP">ASAP</option>
+                                    <option value="1-3 Months">1-3 Months</option>
+                                    <option value="3-6 Months">3-6 Months</option>
+                                    <option value="6-12 Months">6-12 Months</option>
+                                    <option value="Just Browsing">Just Browsing</option>
+                                </select>
+                            </div>
+                            <div class="field-group">
+                                <label for="priceRange">Budget Range</label>
+                                <select id="priceRange" name="priceRange">
+                                    <option value="">Select range...</option>
+                                    <option value="Under $100K">Under $100K</option>
+                                    <option value="$100K - $150K">$100K - $150K</option>
+                                    <option value="$150K - $250K">$150K - $250K</option>
+                                    <option value="$250K+">$250K+</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Preferences -->
+                    <fieldset class="form-section" id="section-preferences">
+                        <legend>Preferences <span class="optional">(optional)</span></legend>
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label for="contactMethod">Preferred Contact Method</label>
+                                <select id="contactMethod" name="contactMethod">
+                                    <option value="">No preference</option>
+                                    <option value="Call">Call</option>
+                                    <option value="Text">Text</option>
+                                    <option value="Email">Email</option>
+                                </select>
+                            </div>
+                            <div class="field-group">
+                                <label for="bestTime">Best Time to Reach</label>
+                                <select id="bestTime" name="bestTime">
+                                    <option value="">No preference</option>
+                                    <option value="Morning">Morning</option>
+                                    <option value="Afternoon">Afternoon</option>
+                                    <option value="Evening">Evening</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <label for="comments">Anything else you'd like us to know?</label>
+                            <textarea id="comments" name="comments" rows="3" placeholder="Questions about the business, financials, schedule a showing..."></textarea>
+                        </div>
+                    </fieldset>
+
+                    <!-- Hidden tracking -->
+                    <input type="hidden" id="utmSource" name="utmSource">
+                    <input type="hidden" id="utmMedium" name="utmMedium">
+                    <input type="hidden" id="utmCampaign" name="utmCampaign">
+                    <input type="hidden" id="utmTerm" name="utmTerm">
+                    <input type="hidden" id="utmContent" name="utmContent">
+                    <input type="hidden" id="referringUrl" name="referringUrl">
+                    <input type="hidden" id="formId" name="formId" value="monkey-maghees">
+                    <input type="hidden" id="submittedAt" name="submittedAt">
+
+                    <div class="form-actions">
+                        <button type="submit" id="submitBtn" class="btn-submit">
+                            <span class="btn-text">Request Information</span>
+                            <span class="btn-loading" hidden><span class="spinner"></span> Sending...</span>
+                        </button>
+                        <p class="form-disclaimer">
+                            By submitting this form you agree to be contacted by our team regarding this business opportunity. We respect your privacy and will never share your information with third parties.
+                        </p>
+                    </div>
+                </form>
+
+                <!-- Success -->
+                <div id="successMessage" class="success-message" hidden>
+                    <div class="success-icon">&#10003;</div>
+                    <h2>Thank You!</h2>
+                    <p>We've received your information and will be in touch shortly with details about Monkey Maghees.</p>
+                </div>
+
+                <!-- Error -->
+                <div id="errorMessage" class="error-banner" hidden>
+                    <p>Something went wrong. Please try again or email us directly at <a href="mailto:ryansylvestri@gmail.com">ryansylvestri@gmail.com</a>.</p>
+                </div>
             </div>
 
             <div class="disclaimer">
@@ -1138,6 +1467,156 @@
                 }
             });
         });
+
+        // ===== LEAD CAPTURE FORM =====
+        (function () {
+          'use strict';
+          var WEBHOOK_URL = 'https://n8n.srv1106931.hstgr.cloud/webhook/lead-capture';
+          var params = new URLSearchParams(window.location.search);
+          if (params.get('webhookUrl')) WEBHOOK_URL = params.get('webhookUrl');
+
+          var form = document.getElementById('leadCaptureForm');
+          if (!form) return;
+          var submitBtn = document.getElementById('submitBtn');
+          var btnText = submitBtn.querySelector('.btn-text');
+          var btnLoading = submitBtn.querySelector('.btn-loading');
+          var successMsg = document.getElementById('successMessage');
+          var errorMsg = document.getElementById('errorMessage');
+          var sectionBuyer = document.getElementById('section-buyer');
+
+          // UTM capture
+          var utmFields = ['utmSource','utmMedium','utmCampaign','utmTerm','utmContent'];
+          var utmKeys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+          for (var i = 0; i < utmFields.length; i++) {
+            var el = document.getElementById(utmFields[i]);
+            if (el) el.value = params.get(utmKeys[i]) || '';
+          }
+          var refEl = document.getElementById('referringUrl');
+          if (refEl) refEl.value = document.referrer || '';
+
+          // Progressive disclosure
+          var intentRadios = document.querySelectorAll('input[name="intent"]');
+          function updateSections() {
+            var selected = document.querySelector('input[name="intent"]:checked');
+            if (!selected) { sectionBuyer.hidden = true; return; }
+            sectionBuyer.hidden = !(selected.value === 'Buying' || selected.value === 'Investor');
+          }
+          for (var j = 0; j < intentRadios.length; j++) {
+            intentRadios[j].addEventListener('change', updateSections);
+          }
+
+          // Phone formatting
+          var phoneInput = document.getElementById('phone');
+          phoneInput.addEventListener('input', function () {
+            var digits = this.value.replace(/\D/g, '');
+            if (!digits.length) { this.value = ''; return; }
+            var f = '';
+            if (digits.length > 0) f += '(' + digits.substring(0, 3);
+            if (digits.length >= 3) f += ') ';
+            if (digits.length > 3) f += digits.substring(3, 6);
+            if (digits.length >= 6) f += '-' + digits.substring(6, 10);
+            this.value = f;
+          });
+
+          // Validation
+          function showError(name, msg) {
+            var s = document.querySelector('.error-msg[data-for="' + name + '"]');
+            if (s) s.textContent = msg;
+            var inp = document.querySelector('[name="' + name + '"]');
+            if (inp) inp.classList.add('invalid');
+          }
+          function clearErrors() {
+            document.querySelectorAll('.error-msg').forEach(function(s){s.textContent='';});
+            document.querySelectorAll('.invalid').forEach(function(el){el.classList.remove('invalid');});
+          }
+          function validate() {
+            clearErrors(); var ok = true;
+            if (!form.firstName.value.trim()) { showError('firstName','First name is required'); ok=false; }
+            if (!form.lastName.value.trim()) { showError('lastName','Last name is required'); ok=false; }
+            var email = form.email.value.trim();
+            if (!email) { showError('email','Email is required'); ok=false; }
+            else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('email','Please enter a valid email'); ok=false; }
+            var ph = form.phone.value.replace(/\D/g,'');
+            if (!ph) { showError('phone','Phone number is required'); ok=false; }
+            else if (ph.length < 10) { showError('phone','Please enter a 10-digit phone number'); ok=false; }
+            if (!document.querySelector('input[name="intent"]:checked')) { showError('intent','Please select your interest'); ok=false; }
+            return ok;
+          }
+
+          // Collect data
+          function collect() {
+            var intent = document.querySelector('input[name="intent"]:checked');
+            var data = {
+              firstName: form.firstName.value.trim(),
+              lastName: form.lastName.value.trim(),
+              email: form.email.value.trim(),
+              phone: form.phone.value.replace(/\D/g,''),
+              intent: intent ? intent.value : '',
+              contactMethod: form.contactMethod.value,
+              bestTime: form.bestTime.value,
+              comments: form.comments.value.trim(),
+              utmSource: form.utmSource.value,
+              utmMedium: form.utmMedium.value,
+              utmCampaign: form.utmCampaign.value,
+              utmTerm: form.utmTerm.value,
+              utmContent: form.utmContent.value,
+              referringUrl: form.referringUrl.value,
+              formId: form.formId.value,
+              submittedAt: new Date().toISOString()
+            };
+            if (intent && (intent.value === 'Buying' || intent.value === 'Investor')) {
+              data.buyerTimeline = form.buyerTimeline ? form.buyerTimeline.value : '';
+              data.priceRange = form.priceRange ? form.priceRange.value : '';
+            }
+            return data;
+          }
+
+          function setLoading(on) {
+            submitBtn.disabled = on;
+            btnText.hidden = on;
+            btnLoading.hidden = !on;
+          }
+
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            errorMsg.hidden = true;
+            if (!validate()) {
+              var first = form.querySelector('.invalid');
+              if (first) { first.scrollIntoView({behavior:'smooth',block:'center'}); first.focus(); }
+              return;
+            }
+            var data = collect();
+            setLoading(true);
+            fetch(WEBHOOK_URL, {
+              method: 'POST',
+              headers: {'Content-Type':'application/json'},
+              body: JSON.stringify(data)
+            })
+            .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json().catch(function(){return {};}); })
+            .then(function(){
+              form.hidden = true;
+              successMsg.hidden = false;
+              successMsg.scrollIntoView({behavior:'smooth',block:'center'});
+              if (typeof gtag === 'function') gtag('event','lead_form_submit',{event_category:'Lead',event_label:data.intent});
+              if (typeof fbq === 'function') fbq('track','Lead',{content_name:data.intent});
+            })
+            .catch(function(err){
+              console.error('Form submission error:', err);
+              errorMsg.hidden = false;
+              errorMsg.scrollIntoView({behavior:'smooth',block:'center'});
+            })
+            .finally(function(){ setLoading(false); });
+          });
+
+          form.addEventListener('input', function(e){
+            var n = e.target.name;
+            if(n){
+              var s = document.querySelector('.error-msg[data-for="'+n+'"]');
+              if(s) s.textContent='';
+              e.target.classList.remove('invalid');
+            }
+          });
+        })();
     </script>
 </body>
 </html>
